@@ -13,6 +13,7 @@ func _ready() -> void:
 	$Button.button_up.connect(_on_button_button_up)
 	table.object_fell.connect(get_over_here)
 	untouch.connect(table.chains)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float):
 	if touching:
@@ -36,3 +37,13 @@ func _off_table():
 func get_over_here():
 	if on_table == false:
 		create_tween().tween_property(self, "position", Vector2(597.0, 446.0), 0.5)
+
+#Call this everytime u want to interact 
+func interact():
+	pass
+
+func _input(event):
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_E and touching == true:
+			interact()
+			
