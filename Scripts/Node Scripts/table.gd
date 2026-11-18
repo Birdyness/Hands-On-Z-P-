@@ -10,11 +10,9 @@ func _process(delta: float) -> void:
 	pass
 	
 func item_back(object: toolBasic):
-	if object is toolBasic:
 		object._on_table()
 		
 func item_left(object: toolBasic):
-	if object is toolBasic:
 		object._off_table()
 
 func chains(object: toolBasic):
