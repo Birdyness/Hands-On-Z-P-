@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ct3duxtxg1v7d"]
 
+[ext_resource type="Script" uid="uid://dfhndqoepjqgo" path="res://Scripts/Node Scripts/table.gd" id="1_4ppvu"]
 [ext_resource type="Texture2D" uid="uid://b2f8how3xohik" path="res://Assets/Table.png" id="1_jd0nb"]
 
 [node name="Table" type="Area2D" unique_id=956040292]
+script = ExtResource("1_4ppvu")
 
 [node name="Table" type="Sprite2D" parent="." unique_id=412692955]
 position = Vector2(-0.99999994, -0.99999994)
