@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://djyy664kubtv8"]
+
+[ext_resource type="Script" uid="uid://c3j1fvy6elulu" path="res://Scripts/Node Scripts/book_inside.gd" id="1_b25w4"]
+[ext_resource type="Texture2D" uid="uid://y6j2rtcqfbr0" path="res://Assets/Book.png" id="1_skadl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(795, 568)
+
+[node name="The Perfect Book" type="Area2D" unique_id=1266168866]
+script = ExtResource("1_b25w4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1465507148]
+position = Vector2(-2.9999847, -10.999996)
+scale = Vector2(1.1925997, 1.1925997)
+texture = ExtResource("1_skadl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1043165150]
+position = Vector2(-4.5, -14)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Button" type="Button" parent="." unique_id=1058103749]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -403.0
+offset_top = -293.0
+offset_right = 392.0
+offset_bottom = 263.0

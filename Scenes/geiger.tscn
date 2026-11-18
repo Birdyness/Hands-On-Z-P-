@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dn7tcrqefy4d1"]
+
+[ext_resource type="Texture2D" uid="uid://dpcwb7dhsnnw4" path="res://Assets/Geiger Counter.png" id="1_g8oa5"]
+[ext_resource type="Script" uid="uid://btaxjqui8183p" path="res://Scripts/Node Scripts/geiger.gd" id="1_l5l0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(66, 146)
+
+[node name="Node2D" type="Area2D" unique_id=795047583]
+script = ExtResource("1_l5l0f")
+
+[node name="Button" type="Button" parent="." unique_id=444539932]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -37.0
+offset_top = -73.0
+offset_right = 39.0
+offset_bottom = 77.97296
+
+[node name="GeigerCounter" type="Sprite2D" parent="." unique_id=1463551835]
+position = Vector2(-0.17881775, 0.066986084)
+scale = Vector2(0.14777023, 0.14777023)
+texture = ExtResource("1_g8oa5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1939653235]
+shape = SubResource("RectangleShape2D_g4v7s")

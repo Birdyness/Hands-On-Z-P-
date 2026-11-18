@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bfmqasnqtf5j7"]
+
+[ext_resource type="Script" uid="uid://bi5p8mr2xxcxl" path="res://Scripts/Node Scripts/thermometer.gd" id="1_f5lcp"]
+[ext_resource type="Texture2D" uid="uid://dxucfenagho56" path="res://Assets/Thermometer.png" id="1_fubdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(26, 180)
+
+[node name="Node2D" type="Area2D" unique_id=1531218020]
+script = ExtResource("1_f5lcp")
+
+[node name="Button" type="Button" parent="." unique_id=1062243958]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -15.0
+offset_top = -91.0
+offset_right = 13.801315
+offset_bottom = 84.52174
+offset_transform_rotation = -2.6755898
+
+[node name="Thermometer" type="Sprite2D" parent="." unique_id=1140712207]
+position = Vector2(-0.50000006, -1.5)
+rotation = 2.3631759
+scale = Vector2(0.42293268, 0.42293268)
+texture = ExtResource("1_fubdq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019629503]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_g4v7s")

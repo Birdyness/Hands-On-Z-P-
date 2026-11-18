@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dfktmoxgmccx6"]
+
+[ext_resource type="Script" uid="uid://d1g5vkkaebxv0" path="res://Scripts/Node Scripts/lie_detector.gd" id="1_2f6nw"]
+[ext_resource type="Texture2D" uid="uid://b7mtiox2s5fme" path="res://Assets/Lie Detector.png" id="1_046ma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(222, 198)
+
+[node name="Node2D" type="Area2D" unique_id=16233107]
+script = ExtResource("1_2f6nw")
+
+[node name="Button" type="Button" parent="." unique_id=1516964139]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -114.0
+offset_top = -101.0
+offset_right = 118.835785
+offset_bottom = 107.0
+
+[node name="LieDetector" type="Sprite2D" parent="." unique_id=753952909]
+position = Vector2(-2, -2)
+scale = Vector2(0.15665157, 0.15665156)
+texture = ExtResource("1_046ma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1073748885]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_g4v7s")

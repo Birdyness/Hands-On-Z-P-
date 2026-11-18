@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ct3duxtxg1v7d"]
+
+[ext_resource type="Texture2D" uid="uid://b2f8how3xohik" path="res://Assets/Table.png" id="1_jd0nb"]
+
+[node name="Table" type="Area2D" unique_id=956040292]
+
+[node name="Table" type="Sprite2D" parent="." unique_id=412692955]
+position = Vector2(-0.99999994, -0.99999994)
+scale = Vector2(0.83101046, 0.8310105)
+texture = ExtResource("1_jd0nb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=791727038]
+polygon = PackedVector2Array(-301, -215, 299, -210, 412, 119, -416, 116)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cuysvj2fkvigo"]
+
+[ext_resource type="PackedScene" uid="uid://ct3duxtxg1v7d" path="res://Scenes/table.tscn" id="1_jvwm3"]
+[ext_resource type="PackedScene" uid="uid://bhnenhr6rcm82" path="res://Scenes/camera.tscn" id="2_5m7mu"]
+[ext_resource type="PackedScene" uid="uid://dfktmoxgmccx6" path="res://Scenes/lie_detector.tscn" id="2_hx0c2"]
+[ext_resource type="PackedScene" uid="uid://xp0yvucdqfro" path="res://Scenes/book.tscn" id="3_j6iwe"]
+[ext_resource type="PackedScene" uid="uid://dn7tcrqefy4d1" path="res://Scenes/geiger.tscn" id="5_2gp45"]
+[ext_resource type="PackedScene" uid="uid://bfmqasnqtf5j7" path="res://Scenes/thermometer.tscn" id="6_hq336"]
+[ext_resource type="PackedScene" uid="uid://djyy664kubtv8" path="res://Scenes/bookInside.tscn" id="7_2gp45"]
+
+[node name="workspace" type="Node2D" unique_id=657970035]
+
+[node name="BookInside" parent="." unique_id=1529383147 instance=ExtResource("7_2gp45")]
+position = Vector2(596, 394)
+
+[node name="Table" parent="." unique_id=1774644359 instance=ExtResource("1_jvwm3")]
+position = Vector2(597, 446)
+
+[node name="LieD" parent="." unique_id=1369895308 instance=ExtResource("2_hx0c2")]
+position = Vector2(788, 417)
+
+[node name="Camera" parent="." unique_id=283515322 instance=ExtResource("2_5m7mu")]
+position = Vector2(547, 385)
+
+[node name="Geiger" parent="." unique_id=858934992 instance=ExtResource("5_2gp45")]
+position = Vector2(396, 374)
+
+[node name="Thermometer" parent="." unique_id=243509505 instance=ExtResource("6_hq336")]
+position = Vector2(290, 362)
+
+[node name="Book" parent="." unique_id=1508869801 instance=ExtResource("3_j6iwe")]
+position = Vector2(769, 297)

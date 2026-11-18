@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bhnenhr6rcm82"]
+
+[ext_resource type="Texture2D" uid="uid://dv8bamu6e6vhc" path="res://Assets/camera.png" id="1_375tr"]
+[ext_resource type="Script" uid="uid://bqa1tnxndh26f" path="res://Scripts/Node Scripts/camera.gd" id="1_f1cf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(161, 120)
+
+[node name="Node2D" type="Area2D" unique_id=288146925]
+script = ExtResource("1_f1cf7")
+
+[node name="Button" type="Button" parent="." unique_id=1494678075]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -78.0
+offset_top = -63.0
+offset_right = 80.00003
+offset_bottom = 61.0
+
+[node name="Camera" type="Sprite2D" parent="." unique_id=1602503761]
+position = Vector2(-0.14710999, 0.09817505)
+scale = Vector2(0.34935063, 0.34935066)
+texture = ExtResource("1_375tr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2118376085]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_g4v7s")
