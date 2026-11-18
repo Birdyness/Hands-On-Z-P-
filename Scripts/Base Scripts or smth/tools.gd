@@ -21,3 +21,12 @@ func _on_button_button_down():
 
 func _on_button_button_up():
 	touching = false
+
+#Call this everytime u want to interact 
+func interact():
+	pass
+
+func _input(event):
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_E and touching == true:
+			interact()
