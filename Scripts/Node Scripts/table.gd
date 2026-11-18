@@ -9,12 +9,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-
-func item_back(object: Area2D):
+func item_back(object: toolBasic):
 	if object is toolBasic:
 		object._on_table()
 		
-func item_left(object: Area2D):
+func item_left(object: toolBasic):
 	if object is toolBasic:
 		object._off_table()
-		object_fell.emit()
+
+func chains(object: toolBasic):
+		if object.on_table == false:
+			object.get_over_here()
