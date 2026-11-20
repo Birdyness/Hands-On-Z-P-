@@ -8,7 +8,7 @@ func _ready() -> void:
 	hide()
 	get_parent().move_child(self, 0)
 	book.book_open.connect(book_opened)
-
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_escape") and book_open == true:
 		hide()
@@ -21,3 +21,9 @@ func book_opened():
 	move_to_front()
 	book_open = true
 	
+
+func _on_exit_pressed() -> void:
+	hide()
+	get_parent().move_child(self, 0)
+	book_open = false
+	book_close.emit()

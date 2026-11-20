@@ -14,13 +14,22 @@ position = Vector2(-2.9999847, -10.999996)
 scale = Vector2(1.1925997, 1.1925997)
 texture = ExtResource("1_skadl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1043165150]
-position = Vector2(-4.5, -14)
-shape = SubResource("RectangleShape2D_g4v7s")
+[node name="Exit" type="Button" parent="." unique_id=161926578]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -1010.0
+offset_top = -692.0
+offset_right = 891.0
+offset_bottom = 633.0
 
-[node name="Button" type="Button" parent="." unique_id=1058103749]
+[node name="Interact" type="Button" parent="." unique_id=1058103749]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -403.0
 offset_top = -293.0
 offset_right = 392.0
 offset_bottom = 263.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1043165150]
+position = Vector2(-4.5, -14)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

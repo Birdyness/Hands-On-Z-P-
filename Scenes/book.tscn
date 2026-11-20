@@ -9,13 +9,6 @@ size = Vector2(229, 164)
 [node name="Book" type="Area2D" unique_id=1263288706]
 script = ExtResource("1_khdek")
 
-[node name="Button" type="Button" parent="." unique_id=828813190]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -113.0
-offset_top = -82.0
-offset_right = 113.60979
-offset_bottom = 81.0
-
 [node name="Book" type="Sprite2D" parent="." unique_id=1461274022]
 position = Vector2(0.8181762, 0.5909118)
 scale = Vector2(0.34735364, 0.34735367)
@@ -24,5 +17,13 @@ texture = ExtResource("1_rhhov")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304657374]
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Button" type="Button" parent="." unique_id=828813190]
+self_modulate = Color(1, 1, 1, 0.6901961)
+offset_left = -113.0
+offset_top = -82.0
+offset_right = 113.60979
+offset_bottom = 81.0
+text = "BOOK"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

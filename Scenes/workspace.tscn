@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgqri674up3sh" path="res://Assets/Wall.jpg" id="2_dbjx3"]
 [ext_resource type="PackedScene" uid="uid://dfktmoxgmccx6" path="res://Scenes/lie_detector.tscn" id="2_hx0c2"]
 [ext_resource type="PackedScene" uid="uid://xp0yvucdqfro" path="res://Scenes/book.tscn" id="3_j6iwe"]
+[ext_resource type="Texture2D" uid="uid://b6g2pu52oasj0" path="res://icon.svg" id="3_qya5s"]
 [ext_resource type="PackedScene" uid="uid://dn7tcrqefy4d1" path="res://Scenes/geiger.tscn" id="5_2gp45"]
 [ext_resource type="PackedScene" uid="uid://bfmqasnqtf5j7" path="res://Scenes/thermometer.tscn" id="6_hq336"]
 [ext_resource type="PackedScene" uid="uid://djyy664kubtv8" path="res://Scenes/bookInside.tscn" id="7_2gp45"]
@@ -34,6 +35,11 @@ position = Vector2(1727.0001, 324.99997)
 rotation = 1.5707964
 scale = Vector2(1.3435832, 1.803578)
 texture = ExtResource("2_dbjx3")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1665860628]
+position = Vector2(583, -358)
+scale = Vector2(1.859375, 1.90625)
+texture = ExtResource("3_qya5s")
 
 [node name="BookInside" parent="." unique_id=1529383147 instance=ExtResource("7_2gp45")]
 visible = false
