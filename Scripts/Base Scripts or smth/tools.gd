@@ -13,7 +13,10 @@ func _ready() -> void:
 func _process(delta: float):
 	if touching:
 		position = get_global_mouse_position() - off
-
+	
+	if Input.is_action_just_pressed("ui_e"):
+		interact()
+	
 func _on_button_button_down():
 	touching = true
 	off = get_global_mouse_position() - global_position
@@ -25,8 +28,3 @@ func _on_button_button_up():
 #Call this everytime u want to interact 
 func interact():
 	pass
-
-func _input(event):
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_E and touching == true:
-			interact()

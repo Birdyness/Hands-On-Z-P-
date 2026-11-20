@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cuysvj2fkvigo"]
+
+[ext_resource type="Texture2D" uid="uid://miqq1onwbmqt" path="res://Assets/Floor Texture.jpg" id="1_hq336"]
+[ext_resource type="PackedScene" uid="uid://ct3duxtxg1v7d" path="res://Scenes/table.tscn" id="1_jvwm3"]
+[ext_resource type="PackedScene" uid="uid://bhnenhr6rcm82" path="res://Scenes/camera.tscn" id="2_5m7mu"]
+[ext_resource type="Texture2D" uid="uid://dgqri674up3sh" path="res://Assets/Wall.jpg" id="2_dbjx3"]
+[ext_resource type="PackedScene" uid="uid://dfktmoxgmccx6" path="res://Scenes/lie_detector.tscn" id="2_hx0c2"]
+[ext_resource type="PackedScene" uid="uid://xp0yvucdqfro" path="res://Scenes/book.tscn" id="3_j6iwe"]
+[ext_resource type="PackedScene" uid="uid://dn7tcrqefy4d1" path="res://Scenes/geiger.tscn" id="5_2gp45"]
+[ext_resource type="PackedScene" uid="uid://bfmqasnqtf5j7" path="res://Scenes/thermometer.tscn" id="6_hq336"]
+[ext_resource type="PackedScene" uid="uid://djyy664kubtv8" path="res://Scenes/bookInside.tscn" id="7_2gp45"]
+[ext_resource type="PackedScene" uid="uid://bd0qu0rdyjgbs" path="res://Scenes/camera_thingimajig.tscn" id="9_ichma"]
+[ext_resource type="Texture2D" uid="uid://cetvyj8dostw7" path="res://Assets/Entity View.png" id="11_8wigd"]
+[ext_resource type="PackedScene" uid="uid://vj51wq4k1iny" path="res://Scenes/tool_board.tscn" id="12_wocam"]
+
+[node name="workspace" type="Node2D" unique_id=657970035]
+
+[node name="Background" type="Node2D" parent="." unique_id=1377593825]
+
+[node name="Wall2" type="Sprite2D" parent="Background" unique_id=1571046150]
+self_modulate = Color(0.43166232, 0.43166232, 0.43166232, 1)
+position = Vector2(575.56055, -404.58752)
+rotation = 1.5707964
+scale = Vector2(0.9142186, 1.2394582)
+texture = ExtResource("2_dbjx3")
+
+[node name="FloorTexture" type="Sprite2D" parent="Background" unique_id=1523705626]
+position = Vector2(576.00006, 324.00003)
+scale = Vector2(1.43375, 1.2232645)
+texture = ExtResource("1_hq336")
+
+[node name="Wall" type="Sprite2D" parent="Background" unique_id=1669263384]
+position = Vector2(1727.0001, 324.99997)
+rotation = 1.5707964
+scale = Vector2(1.3435832, 1.803578)
+texture = ExtResource("2_dbjx3")
+
+[node name="BookInside" parent="." unique_id=1529383147 instance=ExtResource("7_2gp45")]
+visible = false
+position = Vector2(596, 394)
+
+[node name="Table" parent="." unique_id=1774644359 instance=ExtResource("1_jvwm3")]
+position = Vector2(580, 407)
+
+[node name="LieD" parent="." unique_id=1369895308 instance=ExtResource("2_hx0c2")]
+position = Vector2(777, 363)
+
+[node name="Camera" parent="." unique_id=283515322 instance=ExtResource("2_5m7mu")]
+position = Vector2(547, 385)
+
+[node name="Geiger" parent="." unique_id=858934992 instance=ExtResource("5_2gp45")]
+position = Vector2(396, 374)
+
+[node name="Thermometer" parent="." unique_id=243509505 instance=ExtResource("6_hq336")]
+position = Vector2(290, 362)
+
+[node name="Book" parent="." unique_id=1508869801 instance=ExtResource("3_j6iwe")]
+position = Vector2(587, 127)
+
+[node name="EntityView" type="Sprite2D" parent="." unique_id=924884764]
+self_modulate = Color(1.5589281, 1.5589281, 1.5589281, 1)
+position = Vector2(578, -326)
+scale = Vector2(0.5984375, 0.4708242)
+texture = ExtResource("11_8wigd")
+
+[node name="Tool Board" parent="EntityView" unique_id=201441596 instance=ExtResource("12_wocam")]
+position = Vector2(1921.6711, 1397.5492)
+
+[node name="CameraThingimajig" parent="." unique_id=564468288 instance=ExtResource("9_ichma")]
+z_index = 100
+position = Vector2(577, -326)

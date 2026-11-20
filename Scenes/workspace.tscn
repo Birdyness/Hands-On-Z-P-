@@ -55,7 +55,7 @@ position = Vector2(396, 374)
 position = Vector2(290, 362)
 
 [node name="Book" parent="." unique_id=1508869801 instance=ExtResource("3_j6iwe")]
-position = Vector2(642, 304)
+position = Vector2(587, 127)
 
 [node name="EntityView" type="Sprite2D" parent="." unique_id=924884764]
 self_modulate = Color(1.5589281, 1.5589281, 1.5589281, 1)

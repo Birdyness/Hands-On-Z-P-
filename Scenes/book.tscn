@@ -24,3 +24,5 @@ texture = ExtResource("1_rhhov")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=304657374]
 position = Vector2(1.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

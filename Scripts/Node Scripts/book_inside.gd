@@ -1,6 +1,7 @@
 extends Area2D
 @onready var book = $"../Book"
 var book_open = false
+signal book_close
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,14 +9,15 @@ func _ready() -> void:
 	get_parent().move_child(self, 0)
 	book.book_open.connect(book_opened)
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_escape") and book_open == true:
+		hide()
+		get_parent().move_child(self, 0)
+		book_open = false
+		book_close.emit()
+		
 func book_opened():
 	show()
 	move_to_front()
 	book_open = true
 	
-func _input(event):
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_ESCAPE and book_open == true:
-			hide()
-			get_parent().move_child(self, 0)
-			book_open = false
