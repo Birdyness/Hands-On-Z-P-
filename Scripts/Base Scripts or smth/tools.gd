@@ -1,14 +1,19 @@
-class_name toolBasic extends Area2D
+Ssclass_name toolBasic extends Area2D
 
 var touching = false
 var off = Vector2(0,0)
+var on_table = true
+signal untouch
 
-# Called when the node enters the scene tree for the first time.
+@onready var table = $"../Table"
+
+
 func _ready() -> void:
 	$Button.button_down.connect(_on_button_button_down)
 	$Button.button_up.connect(_on_button_button_up)
-
-
+	table.object_fell.connect(get_over_here)
+	untouch.connect(table.chains)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float):
 	if touching:
@@ -24,6 +29,17 @@ func _on_button_button_down():
 
 func _on_button_button_up():
 	touching = false
+	untouch.emit(self)
+	
+func _on_table():
+	on_table = true
+	
+func _off_table():
+	on_table = false
+	
+func get_over_here():
+	if on_table == false:
+		create_tween().tween_property(self, "position", Vector2(597.0, 446.0), 0.5)
 
 #Call this everytime u want to interact 
 func interact():
