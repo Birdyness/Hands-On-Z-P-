@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://vj51wq4k1iny"]
 
+[ext_resource type="Script" uid="uid://bdhfyypcdwufv" path="res://Scripts/Node Scripts/tool_board.gd" id="1_65v4n"]
 [ext_resource type="Texture2D" uid="uid://bhbo703mvj4nd" path="res://Assets/Tool Board (Placeholder).png" id="1_ple6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(531.1938, 325.81396)
 
 [node name="Tool Board" type="Area2D" unique_id=201441596]
+script = ExtResource("1_65v4n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648967213]
 position = Vector2(6.0000305, -2.9999695)

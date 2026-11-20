@@ -1,5 +1,4 @@
 extends Area2D
-signal object_fell
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,5 +15,5 @@ func item_left(object: toolBasic):
 		object._off_table()
 
 func chains(object: toolBasic):
-		if object.on_table == false:
+		if object.on_table == false and object.on_board == false:
 			object.get_over_here()
