@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bd0qu0rdyjgbs"]
+
+[ext_resource type="Texture2D" uid="uid://b6g2pu52oasj0" path="res://icon.svg" id="1_mf5h2"]
+[ext_resource type="Script" uid="uid://hoxo1on2cf86" path="res://Scenes/sprite_2d.gd" id="2_mcupj"]
+
+[node name="CameraThingimajig" type="Node2D" unique_id=564468288]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=359940257]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1_mf5h2")
+script = ExtResource("2_mcupj")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=972555657]
