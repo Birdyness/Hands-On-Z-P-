@@ -24,6 +24,6 @@ offset_left = -113.0
 offset_top = -82.0
 offset_right = 113.60979
 offset_bottom = 81.0
-text = "BOOK"
+text = "BOOKY"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
