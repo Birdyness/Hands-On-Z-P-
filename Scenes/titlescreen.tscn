@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6g2pu52oasj0" path="res://icon.svg" id="1_3lblr"]
 [ext_resource type="Script" uid="uid://duxgbbah4r4wu" path="res://Scripts/Base Scripts or smth/titlescreen.gd" id="1_u4xby"]
+[ext_resource type="PackedScene" uid="uid://cas6fady8ud2g" path="res://Scenes/titlescreen_ui.tscn" id="2_h87bp"]
 
 [node name="Node3D" type="Node3D" unique_id=854752108 node_paths=PackedStringArray("entity", "camera")]
 script = ExtResource("1_u4xby")
@@ -9,6 +10,8 @@ entity = NodePath("Entity")
 camera = NodePath("Camera3D")
 magnitudeX = 5.0
 magnitudeY = 2.0
+
+[node name="Control" parent="." unique_id=743250380 instance=ExtResource("2_h87bp")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1589270294]
 current = true
