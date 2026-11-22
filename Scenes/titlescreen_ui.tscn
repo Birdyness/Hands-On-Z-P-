@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cas6fady8ud2g"]
 
+[ext_resource type="Script" uid="uid://wtm1m2s506xo" path="res://Scripts/Base Scripts or smth/titlescreen_ui.gd" id="1_jvm4r"]
+[ext_resource type="PackedScene" uid="uid://cuysvj2fkvigo" path="res://Scenes/workspace.tscn" id="2_x0xyd"]
+
 [node name="Control" type="Control" unique_id=743250380]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jvm4r")
+game_scene = ExtResource("2_x0xyd")
 
 [node name="Label" type="Label" parent="." unique_id=2084518425]
 layout_mode = 0
@@ -36,3 +41,6 @@ offset_bottom = 542.0
 scale = Vector2(1.8800006, 1.8800006)
 text = "Quit
 "
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
