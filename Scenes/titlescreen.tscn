@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ddskscuikbuvn"]
+
+[ext_resource type="Texture2D" uid="uid://b6g2pu52oasj0" path="res://icon.svg" id="1_3lblr"]
+[ext_resource type="Script" uid="uid://duxgbbah4r4wu" path="res://Scripts/Base Scripts or smth/titlescreen.gd" id="1_u4xby"]
+
+[node name="Node3D" type="Node3D" unique_id=854752108 node_paths=PackedStringArray("entity", "camera")]
+script = ExtResource("1_u4xby")
+entity = NodePath("Entity")
+camera = NodePath("Camera3D")
+magnitudeX = 5.0
+magnitudeY = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1589270294]
+current = true
+fov = 50.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=219418518]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 1.259512, 0)
+sky_mode = 1
+
+[node name="Entity" type="Node3D" parent="." unique_id=2026399627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5203615, -0.5870179, -3.356017)
+
+[node name="Sprite3D" type="Sprite3D" parent="Entity" unique_id=358204510]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0.18028057, -0.18080717, 0)
+texture = ExtResource("1_3lblr")
