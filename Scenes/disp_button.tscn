@@ -42,3 +42,8 @@ offset_right = 51.0
 offset_bottom = 46.0
 theme_override_font_sizes/font_size = 15
 text = "Flood"
+
+[connection signal="pressed" from="Hanging" to="." method="_on_hanging_pressed"]
+[connection signal="pressed" from="Radiation" to="." method="_on_radiation_pressed"]
+[connection signal="pressed" from="Compression" to="." method="_on_compression_pressed"]
+[connection signal="pressed" from="Flood" to="." method="_on_flood_pressed"]

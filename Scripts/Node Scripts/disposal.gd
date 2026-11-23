@@ -1,11 +1,24 @@
 extends Node2D
+var seq = []
+signal toak
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func threeOfAKind():
+	if seq.size() == 3:
+		toak.emit()
 
+func _on_hanging_pressed() -> void:
+	seq.append("Hanging")
+	threeOfAKind()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_radiation_pressed() -> void:
+	seq.append("Radiation")
+	threeOfAKind()
+
+func _on_compression_pressed() -> void:
+	seq.append("Compression")
+	threeOfAKind()
+
+func _on_flood_pressed() -> void:
+	seq.append("Flood")
+	threeOfAKind()
