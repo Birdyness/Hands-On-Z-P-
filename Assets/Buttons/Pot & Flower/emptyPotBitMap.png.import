@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dtyew1ay54mph"
+path="res://.godot/imported/emptyPotBitMap.png-07f2b9129117300a775ca71e4f74d7f2.res"
+
+[deps]
+
+source_file="res://Assets/Buttons/Pot & Flower/emptyPotBitMap.png"
+dest_files=["res://.godot/imported/emptyPotBitMap.png-07f2b9129117300a775ca71e4f74d7f2.res"]
+
+[params]
+
+create_from=0
+threshold=0.0

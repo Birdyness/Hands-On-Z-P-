@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://btchw0v37j5bh"]
+
+[ext_resource type="Script" uid="uid://kdftqdiepdkb" path="res://Scripts/Node Scripts/pot.gd" id="1_b8ggh"]
+[ext_resource type="Texture2D" uid="uid://cvaudi0vrfauw" path="res://Assets/Buttons/Pot & Flower/emptyPot.png" id="2_rj0eo"]
+[ext_resource type="BitMap" uid="uid://dtyew1ay54mph" path="res://Assets/Buttons/Pot & Flower/emptyPotBitMap.png" id="3_rj0eo"]
+
+[node name="Pot" type="Node2D" unique_id=1347559491]
+script = ExtResource("1_b8ggh")
+
+[node name="potCurrent" type="Sprite2D" parent="." unique_id=1887733026]
+position = Vector2(-1.000001, -3)
+scale = Vector2(0.68396217, 0.6839623)
+texture = ExtResource("2_rj0eo")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=812253606]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -94.0
+offset_top = -127.0
+offset_right = 93.0
+offset_bottom = 119.98114
+texture_normal = ExtResource("2_rj0eo")
+texture_click_mask = ExtResource("3_rj0eo")
+ignore_texture_size = true
+stretch_mode = 0

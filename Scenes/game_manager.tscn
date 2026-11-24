@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButton/ExcButtonDown.png" id="7_b5cn8"]
 [ext_resource type="BitMap" uid="uid://bs5pmt66u883c" path="res://Assets/Buttons/ExcButton/ExcButtonBitMap.png" id="8_jencv"]
 [ext_resource type="Script" uid="uid://cxw86x51xyt14" path="res://Scenes/progress_bar.gd" id="9_i4mau"]
+[ext_resource type="PackedScene" uid="uid://btchw0v37j5bh" path="res://Scenes/pot.tscn" id="10_b5cn8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
 bg_color = Color(0.20392157, 0.6, 0.6, 1)
@@ -64,6 +65,9 @@ value = 40.0
 script = ExtResource("9_i4mau")
 
 [node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
+
+[node name="Pot" parent="." unique_id=1347559491 instance=ExtResource("10_b5cn8")]
+position = Vector2(1005, 489)
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
