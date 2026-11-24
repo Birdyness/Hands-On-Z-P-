@@ -9,7 +9,7 @@ var entity = ""
 
 const entity_data = {
 	"Aetherax": {
-		"disposal": ["Hanging", "Radition", "Compression"],
+		"disposal": ["Hanging", "Radiation", "Compression"],
 		"freq": 2,
 		"thermo": "hot",
 		"flowerLV": 1,
@@ -36,10 +36,10 @@ const entity_data = {
 }
 
 func _ready() -> void:
-	entityRandomizer(randi_range(1, 3))
-	modelRandomizer(randi_range(1, 24))
-	
+	randomizer()
+	get_parent().get_node("dispButton").toak.connect(seqCheck)
 	print(entity)
+	
 func modelRandomizer(modelNo):
 	var number = "res://Assets/Entities/model_" + str(modelNo) + ".png"
 	$entityHolder.texture = load(number) 
@@ -49,6 +49,17 @@ func entityRandomizer(entityID):
 		if entity_data[entPick]["id"] == entityID:
 			entity = entPick
 			break
+func randomizer():
+	entityRandomizer(randi_range(1, 3))
+	modelRandomizer(randi_range(1, 24)) #model needs size readjusment
 	
 func floweytheflower(freq):
 	pass
+
+func seqCheck(disSeq):
+	if entity_data[entity]["disposal"] == disSeq:
+		print("DISPOSED")
+		randomizer()
+		print(entity)
+	else:
+		print("WRONG")

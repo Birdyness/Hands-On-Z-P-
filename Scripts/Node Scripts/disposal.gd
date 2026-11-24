@@ -1,11 +1,12 @@
 extends Node2D
 var seq = []
-signal toak
+signal toak(disSeq)
 
 
 func threeOfAKind():
 	if seq.size() == 3:
-		toak.emit()
+		toak.emit(seq)
+		seq.clear()
 
 func _on_hanging_pressed() -> void:
 	seq.append("Hanging")
