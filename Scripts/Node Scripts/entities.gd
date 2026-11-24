@@ -1,5 +1,7 @@
 class_name Entities extends Node2D
 var entity = ""
+@export var sanity: Sanity
+
 # Disposal: Hanging, Radiation, Compression, Flood
 #freq: 1-3
 #thermo: Hot or Cold
@@ -60,6 +62,7 @@ func seqCheck(disSeq):
 	if entity_data[entity]["disposal"] == disSeq:
 		print("DISPOSED")
 		randomizer()
-		print(entity)
+		sanity.change(20)
+		print(entity) #just to see
 	else:
 		print("WRONG")

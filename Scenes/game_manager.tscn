@@ -5,25 +5,31 @@
 [ext_resource type="PackedScene" uid="uid://bn8j7mr5q6ipv" path="res://Scenes/workspacev2.tscn" id="2_e5fcp"]
 [ext_resource type="PackedScene" uid="uid://cvryd0iwhjs2r" path="res://Scenes/disp_button.tscn" id="2_sq00h"]
 [ext_resource type="Script" uid="uid://b3owkfx3dyr7t" path="res://Scenes/buttons.gd" id="5_efn8y"]
-[ext_resource type="Texture2D" uid="uid://bhjgtf2pximp2" path="res://Assets/Buttons/ExcButton.png" id="6_i4mau"]
-[ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButtonDown.png" id="7_b5cn8"]
-[ext_resource type="BitMap" uid="uid://bs5pmt66u883c" path="res://Assets/Buttons/ExcButtonBitMap.png" id="8_jencv"]
+[ext_resource type="Texture2D" uid="uid://bhjgtf2pximp2" path="res://Assets/Buttons/ExcButton/ExcButton.png" id="6_i4mau"]
+[ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButton/ExcButtonDown.png" id="7_b5cn8"]
+[ext_resource type="BitMap" uid="uid://bs5pmt66u883c" path="res://Assets/Buttons/ExcButton/ExcButtonBitMap.png" id="8_jencv"]
+[ext_resource type="Script" uid="uid://cxw86x51xyt14" path="res://Scenes/progress_bar.gd" id="9_i4mau"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.20392157, 0.6, 0.6, 1)
 
 [node name="gameManager" type="Node2D" unique_id=205253772]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1727859591]
+[node name="background" type="Sprite2D" parent="." unique_id=1727859591]
 self_modulate = Color(0.098289035, 0.098289035, 0.098289035, 1)
 position = Vector2(338.00003, 311.00003)
 scale = Vector2(1.1324325, 1.4084337)
 texture = ExtResource("1_mmt5l")
 
-[node name="entity" parent="." unique_id=256994302 instance=ExtResource("1_e5fcp")]
+[node name="entity" parent="." unique_id=256994302 node_paths=PackedStringArray("sanity") instance=ExtResource("1_e5fcp")]
 position = Vector2(327, 334)
+sanity = NodePath("../SanityBar")
 
 [node name="Node2D" parent="." unique_id=27077772 instance=ExtResource("2_e5fcp")]
 position = Vector2(0, 4)
 
 [node name="dispButton" parent="." unique_id=1839645826 instance=ExtResource("2_sq00h")]
+visible = false
 position = Vector2(1018, 361)
 
 [node name="Buttons" type="Control" parent="." unique_id=845528170]
@@ -47,6 +53,17 @@ texture_pressed = ExtResource("7_b5cn8")
 texture_click_mask = ExtResource("8_jencv")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="SanityBar" type="ProgressBar" parent="." unique_id=1411194817]
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 32.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_g4v7s")
+value = 40.0
+script = ExtResource("9_i4mau")
+
+[node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
