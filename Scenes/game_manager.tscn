@@ -34,11 +34,10 @@ position = Vector2(327, 334)
 sanity = NodePath("../SanityBar")
 
 [node name="Node2D" parent="." unique_id=27077772 instance=ExtResource("2_e5fcp")]
-position = Vector2(0, 4)
+position = Vector2(-1, -2)
 
 [node name="dispButton" parent="." unique_id=1839645826 instance=ExtResource("2_sq00h")]
-visible = false
-position = Vector2(1018, 361)
+position = Vector2(257, 515)
 
 [node name="Buttons" type="Control" parent="." unique_id=845528170]
 layout_mode = 3
@@ -88,7 +87,7 @@ script = ExtResource("9_i4mau")
 [node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
 
 [node name="Pot" parent="." unique_id=1347559491 node_paths=PackedStringArray("sanity", "cEntity") instance=ExtResource("10_b5cn8")]
-position = Vector2(1004, 491)
+position = Vector2(1002, 487)
 sanity = NodePath("../SanityBar")
 cEntity = NodePath("../entity")
 

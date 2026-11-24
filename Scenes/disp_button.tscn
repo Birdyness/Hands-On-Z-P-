@@ -1,49 +1,59 @@
 [gd_scene format=3 uid="uid://cvryd0iwhjs2r"]
 
 [ext_resource type="Script" uid="uid://db2l5kd2loeu2" path="res://Scripts/Node Scripts/disposal.gd" id="1_uor34"]
-[ext_resource type="Texture2D" uid="uid://bhif78j04yr76" path="res://Assets/Others/Speaker Buttons.png" id="1_w2soi"]
+[ext_resource type="Texture2D" uid="uid://c6xyoh3po8fcy" path="res://Assets/Execution Panel/Unpressed Button.png" id="2_8wgyd"]
+[ext_resource type="Texture2D" uid="uid://cf71eaudwlfv4" path="res://Assets/Execution Panel/- Execution Panel -.png" id="2_nsk4k"]
+[ext_resource type="Texture2D" uid="uid://df5f8rux404u7" path="res://Assets/Execution Panel/Pressed Button.png" id="3_nsk4k"]
 
 [node name="dispButton" type="Node2D" unique_id=1839645826]
 script = ExtResource("1_uor34")
 
-[node name="SpeakerButtons" type="Sprite2D" parent="." unique_id=1111221035]
-position = Vector2(1, 2)
-scale = Vector2(2.7463887, 2.7463887)
-texture = ExtResource("1_w2soi")
+[node name="ExecutionPanel" type="Sprite2D" parent="." unique_id=26975512]
+position = Vector2(0, -9.536743e-07)
+scale = Vector2(0.30620903, 0.30620906)
+texture = ExtResource("2_nsk4k")
 
-[node name="Hanging" type="Button" parent="." unique_id=937998758]
-offset_left = -56.0
-offset_top = -266.0
-offset_right = 44.800003
-offset_bottom = -203.0
-theme_override_font_sizes/font_size = 15
-text = "Hanging"
+[node name="Hanging" type="TextureButton" parent="." unique_id=203379154]
+offset_left = -205.0
+offset_top = 31.0
+offset_right = -157.0
+offset_bottom = 80.64383
+texture_normal = ExtResource("2_8wgyd")
+texture_pressed = ExtResource("3_nsk4k")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Radiation" type="Button" parent="." unique_id=2115185215]
-offset_left = -52.0
-offset_top = -194.0
-offset_right = 47.0
-offset_bottom = -122.0
-theme_override_font_sizes/font_size = 15
-text = "Radiation"
+[node name="Radiation" type="TextureButton" parent="." unique_id=292527929]
+offset_left = -83.0
+offset_top = 31.0
+offset_right = -35.0
+offset_bottom = 80.64383
+texture_normal = ExtResource("2_8wgyd")
+texture_pressed = ExtResource("3_nsk4k")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Compression" type="Button" parent="." unique_id=1020987276]
-offset_left = -63.0
-offset_top = -113.0
-offset_right = 53.100006
-offset_bottom = -27.0
-theme_override_font_sizes/font_size = 15
-text = "Compression"
+[node name="Compression" type="TextureButton" parent="." unique_id=2054304493]
+offset_left = 162.0
+offset_top = 31.0
+offset_right = 210.0
+offset_bottom = 80.64383
+texture_normal = ExtResource("2_8wgyd")
+texture_pressed = ExtResource("3_nsk4k")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Flood" type="Button" parent="." unique_id=1396490387]
-offset_left = -62.0
-offset_top = -28.0
-offset_right = 51.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 15
-text = "Flood"
+[node name="Flood" type="TextureButton" parent="." unique_id=602851477]
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 88.0
+offset_bottom = 80.64383
+texture_normal = ExtResource("2_8wgyd")
+texture_pressed = ExtResource("3_nsk4k")
+ignore_texture_size = true
+stretch_mode = 5
 
-[connection signal="pressed" from="Hanging" to="." method="_on_hanging_pressed"]
-[connection signal="pressed" from="Radiation" to="." method="_on_radiation_pressed"]
-[connection signal="pressed" from="Compression" to="." method="_on_compression_pressed"]
-[connection signal="pressed" from="Flood" to="." method="_on_flood_pressed"]
+[connection signal="button_down" from="Hanging" to="." method="_on_hanging_button_down"]
+[connection signal="button_down" from="Radiation" to="." method="_on_radiation_button_down"]
+[connection signal="button_down" from="Compression" to="." method="_on_compression_button_down"]
+[connection signal="button_down" from="Flood" to="." method="_on_flood_button_down"]

@@ -29,6 +29,6 @@ func _on_h_slider_drag_ended(value_changed: bool) -> void:
 		if tween:
 			tween.kill()
 		tween = create_tween()
-		tween.tween_property(h_slider, "value", 0, 0.2)
+		tween.tween_property(h_slider, "value", 0, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	else:
 		thermoDown.emit()
