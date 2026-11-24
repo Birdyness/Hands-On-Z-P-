@@ -13,3 +13,5 @@ texture = ExtResource("2_egtqx")
 [node name="JIC" type="Button" parent="." unique_id=1343126135]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="Timer" type="Timer" parent="." unique_id=391604461]

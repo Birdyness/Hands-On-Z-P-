@@ -22,3 +22,8 @@ texture_normal = ExtResource("2_rj0eo")
 texture_click_mask = ExtResource("3_rj0eo")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Timer" type="Timer" parent="." unique_id=847951505]
+one_shot = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

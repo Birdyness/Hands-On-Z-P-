@@ -5,7 +5,7 @@ var entity = ""
 # Disposal: Hanging, Radiation, Compression, Flood
 #freq: 1-3
 #thermo: Hot or Cold
-#flowerLV: 1-3
+#flowerLV: 0-3 respectively normal, altered, manipulation, wither
 #metalLV 1-3
 #id: just to keep track
 
@@ -14,7 +14,7 @@ const entity_data = {
 		"disposal": ["Hanging", "Radiation", "Compression"],
 		"freq": 2,
 		"thermo": "hot",
-		"flowerLV": 1,
+		"flowerLV": 0,
 		"metalLV": 2,
 		"id": 1
 	},
@@ -23,7 +23,7 @@ const entity_data = {
 		"disposal": ["Compression", "Hanging", "Compression"],
 		"freq": 2,
 		"thermo": "cold",
-		"flowerLV": 1,
+		"flowerLV": 2,
 		"metalLV": 2,
 		"id": 2
 	},
@@ -62,7 +62,8 @@ func seqCheck(disSeq):
 	if entity_data[entity]["disposal"] == disSeq:
 		print("DISPOSED")
 		randomizer()
-		sanity.change(20)
+		sanity.change(40)
 		print(entity) #just to see
 	else:
 		print("WRONG")
+		sanity.change(-20)

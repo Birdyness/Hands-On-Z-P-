@@ -66,8 +66,10 @@ script = ExtResource("9_i4mau")
 
 [node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
 
-[node name="Pot" parent="." unique_id=1347559491 instance=ExtResource("10_b5cn8")]
+[node name="Pot" parent="." unique_id=1347559491 node_paths=PackedStringArray("sanity", "cEntity") instance=ExtResource("10_b5cn8")]
 position = Vector2(1005, 489)
+sanity = NodePath("../SanityBar")
+cEntity = NodePath("../entity")
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
