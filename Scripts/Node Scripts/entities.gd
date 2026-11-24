@@ -137,7 +137,7 @@ func entityRandomizer(entityID):
 			entity = entPick
 			break
 func randomizer():
-	entityRandomizer(randi_range(1, 13))
+	entityRandomizer(randi_range(11, 11))
 	modelRandomizer(randi_range(1, 24)) #model needs size readjusment
 	
 func seqCheck(disSeq):

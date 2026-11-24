@@ -64,7 +64,7 @@ func _process(_delta: float) -> void:
 		freqBand = newFreq
 		stopTheMusic()
 		
-		if newFreq != 0 and entity.entity_data[entity.entity]["freq"] == newFreq:
+		if newFreq != 0 and (entity.entity_data[entity.entity]["freq"] == newFreq or entity.entity_data[entity.entity]["freq"] == 4):
 			inter_freq.play()
 		else:
 			if newFreq == 1:
