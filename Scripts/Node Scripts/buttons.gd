@@ -2,7 +2,7 @@ extends Control
 signal dispDown
 signal thermoDown
 
-@onready var h_slider: HSlider = $HSlider
+@onready var thermoLever: HSlider = $ThermoLever
 @onready var execute: TextureButton = $Execution
 var tween: Tween
 
@@ -25,10 +25,10 @@ func _on_execution_button_up() -> void:
 
 
 func _on_h_slider_drag_ended(value_changed: bool) -> void:
-	if h_slider.value != 100:
+	if thermoLever.value != 100:
 		if tween:
 			tween.kill()
 		tween = create_tween()
-		tween.tween_property(h_slider, "value", 0, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(thermoLever, "value", 0, 0.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	else:
 		thermoDown.emit()

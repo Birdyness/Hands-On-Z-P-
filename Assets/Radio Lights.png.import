@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gudduo7jsu1u"
-path="res://.godot/imported/grabberHolder.png-dff3fe2e3b95a3dfa741878df87fc8b1.ctex"
+uid="uid://b5eeguc5cmebs"
+path="res://.godot/imported/Radio Lights.png-86ae2698f75c94448eb1ad73e2f7aa93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Buttons/grabberHolder.png"
-dest_files=["res://.godot/imported/grabberHolder.png-dff3fe2e3b95a3dfa741878df87fc8b1.ctex"]
+source_file="res://Assets/Radio Lights.png"
+dest_files=["res://.godot/imported/Radio Lights.png-86ae2698f75c94448eb1ad73e2f7aa93.ctex"]
 
 [params]
 

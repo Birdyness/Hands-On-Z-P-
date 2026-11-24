@@ -4,13 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://drtks4x3t1h4n" path="res://Assets/Others/backgroundPlaceholder.jpg" id="1_mmt5l"]
 [ext_resource type="PackedScene" uid="uid://bn8j7mr5q6ipv" path="res://Scenes/workspacev2.tscn" id="2_e5fcp"]
 [ext_resource type="PackedScene" uid="uid://cvryd0iwhjs2r" path="res://Scenes/disp_button.tscn" id="2_sq00h"]
-[ext_resource type="Script" uid="uid://b3owkfx3dyr7t" path="res://Scenes/buttons.gd" id="5_efn8y"]
+[ext_resource type="Texture2D" uid="uid://bxvnj24u60sqt" path="res://Assets/Workdesk/Layout.png" id="3_y8n5u"]
+[ext_resource type="PackedScene" uid="uid://cof5m02iwcnf" path="res://Scenes/guidebook.tscn" id="4_e6ru4"]
+[ext_resource type="Script" uid="uid://b3owkfx3dyr7t" path="res://Scripts/Node Scripts/buttons.gd" id="5_efn8y"]
 [ext_resource type="Texture2D" uid="uid://bhjgtf2pximp2" path="res://Assets/Buttons/ExcButton/ExcButton.png" id="6_i4mau"]
 [ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButton/ExcButtonDown.png" id="7_b5cn8"]
 [ext_resource type="BitMap" uid="uid://bs5pmt66u883c" path="res://Assets/Buttons/ExcButton/ExcButtonBitMap.png" id="8_jencv"]
-[ext_resource type="Script" uid="uid://cxw86x51xyt14" path="res://Scenes/progress_bar.gd" id="9_i4mau"]
+[ext_resource type="Script" uid="uid://cxw86x51xyt14" path="res://Scripts/Node Scripts/progress_bar.gd" id="9_i4mau"]
 [ext_resource type="Texture2D" uid="uid://b28no571vff2l" path="res://Assets/Buttons/Execution Button.png" id="9_jencv"]
 [ext_resource type="PackedScene" uid="uid://btchw0v37j5bh" path="res://Scenes/pot.tscn" id="10_b5cn8"]
+[ext_resource type="PackedScene" uid="uid://r7toxb2hth54" path="res://Scenes/radio.tscn" id="13_e6ru4"]
+[ext_resource type="Texture2D" uid="uid://b3sglxo4dqf2w" path="res://Assets/Others/cover.png" id="14_sm5re"]
+[ext_resource type="Script" uid="uid://bmcrkwpfpbob5" path="res://Scripts/Node Scripts/shake_vfx.gd" id="15_hjqsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmrvs"]
 
@@ -33,11 +38,19 @@ texture = ExtResource("1_mmt5l")
 position = Vector2(327, 334)
 sanity = NodePath("../SanityBar")
 
-[node name="Node2D" parent="." unique_id=27077772 instance=ExtResource("2_e5fcp")]
+[node name="Layout2" type="Sprite2D" parent="." unique_id=1986899367]
+position = Vector2(573, 318.00003)
+scale = Vector2(0.3182292, 0.33194444)
+texture = ExtResource("3_y8n5u")
+
+[node name="Layout" parent="." unique_id=27077772 instance=ExtResource("2_e5fcp")]
 position = Vector2(-1, -2)
 
+[node name="guidebook" parent="." unique_id=443674428 instance=ExtResource("4_e6ru4")]
+position = Vector2(726, 500)
+
 [node name="dispButton" parent="." unique_id=1839645826 instance=ExtResource("2_sq00h")]
-position = Vector2(257, 515)
+position = Vector2(-668, 515)
 
 [node name="Buttons" type="Control" parent="." unique_id=845528170]
 layout_mode = 3
@@ -61,7 +74,7 @@ texture_click_mask = ExtResource("8_jencv")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="HSlider" type="HSlider" parent="Buttons" unique_id=1908271134]
+[node name="ThermoLever" type="HSlider" parent="Buttons" unique_id=1908271134]
 layout_mode = 0
 offset_left = -1002.0
 offset_top = -595.0
@@ -91,6 +104,25 @@ position = Vector2(1002, 487)
 sanity = NodePath("../SanityBar")
 cEntity = NodePath("../entity")
 
+[node name="Radio" parent="." unique_id=1144881362 instance=ExtResource("13_e6ru4")]
+position = Vector2(1073, 180)
+
+[node name="Cover" type="Sprite2D" parent="." unique_id=420841881]
+position = Vector2(725.1046, 376.38345)
+scale = Vector2(0.17752287, 0.1775229)
+texture = ExtResource("14_sm5re")
+
+[node name="Cover" type="Button" parent="Cover" unique_id=294263515]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -192.11401
+offset_top = -41.591553
+offset_right = 207.83472
+offset_bottom = 42.904785
+
+[node name="shakeVFX" type="Camera2D" parent="." unique_id=1438612946]
+position = Vector2(577, 324)
+script = ExtResource("15_hjqsb")
+
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
-[connection signal="drag_ended" from="Buttons/HSlider" to="Buttons" method="_on_h_slider_drag_ended"]
+[connection signal="drag_ended" from="Buttons/ThermoLever" to="Buttons" method="_on_h_slider_drag_ended"]

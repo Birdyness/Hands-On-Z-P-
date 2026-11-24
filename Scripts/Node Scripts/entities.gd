@@ -1,6 +1,7 @@
 class_name Entities extends Node2D
 var entity = ""
 @export var sanity: Sanity
+@onready var shake_vfx: Camera2D = $"../shakeVFX"
 
 # Disposal: Hanging, Radiation, Compression, Flood
 #freq: 1-3
@@ -67,3 +68,4 @@ func seqCheck(disSeq):
 	else:
 		print("WRONG")
 		sanity.change(-10)
+		shake_vfx.screen_shake(15, 0.6)

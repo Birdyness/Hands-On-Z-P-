@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cof5m02iwcnf"]
+
+[ext_resource type="Script" uid="uid://bcvqdc664a7jv" path="res://Scripts/Node Scripts/guidebook.gd" id="1_15esn"]
+[ext_resource type="Texture2D" uid="uid://6hkv375maw3u" path="res://Assets/Workdesk/Guidebook.png" id="1_m5omo"]
+
+[node name="guidebook" type="Node2D" unique_id=443674428]
+script = ExtResource("1_15esn")
+
+[node name="book" type="Sprite2D" parent="." unique_id=1388498520]
+position = Vector2(1.0000001, 0)
+scale = Vector2(0.32083336, 0.3208333)
+texture = ExtResource("1_m5omo")
+
+[node name="Button" type="Button" parent="." unique_id=403475071]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -27.0
+offset_top = -114.0
+offset_right = 29.0
+offset_bottom = 116.0
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
