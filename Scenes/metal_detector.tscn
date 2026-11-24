@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dun8hub68a3w5"]
+
+[ext_resource type="Script" uid="uid://cra8jtg15freq" path="res://Scripts/Node Scripts/metal_detector.gd" id="1_elo4q"]
+[ext_resource type="Texture2D" uid="uid://c6xyoh3po8fcy" path="res://Assets/Execution Panel/Unpressed Button.png" id="2_u244r"]
+[ext_resource type="BitMap" uid="uid://b6x3t85uqkcq2" path="res://Assets/Execution Panel/ButtonBitMap.png" id="3_u244r"]
+
+[node name="metalDetector" type="Node2D" unique_id=515012008]
+script = ExtResource("1_elo4q")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=241104787]
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 25.0
+offset_bottom = 25.0
+texture_normal = ExtResource("2_u244r")
+texture_click_mask = ExtResource("3_u244r")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

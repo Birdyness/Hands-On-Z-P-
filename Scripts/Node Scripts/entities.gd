@@ -5,16 +5,16 @@ var entity = ""
 
 # Disposal: Hanging, Radiation, Compression, Flood
 #freq: 1-3
-#thermo: Hot or Cold
+#thermo: 0-2 respectively normal, coldB, hotB
 #flowerLV: 0-3 respectively normal, altered, manipulation, wither
-#metalLV 1-3
+#metalLV 0-3
 #id: just to keep track
 
 const entity_data = {
 	"Aetherax": {
 		"disposal": ["Hanging", "Radiation", "Compression"],
 		"freq": 2,
-		"thermo": "hot",
+		"thermo": 2,
 		"flowerLV": 0,
 		"metalLV": 2,
 		"id": 1
@@ -23,7 +23,7 @@ const entity_data = {
 	"Frogman": {
 		"disposal": ["Compression", "Hanging", "Compression"],
 		"freq": 2,
-		"thermo": "cold",
+		"thermo": 1,
 		"flowerLV": 2,
 		"metalLV": 2,
 		"id": 2
@@ -31,7 +31,7 @@ const entity_data = {
 	"Chupacabra": {
 		"disposal": ["Hanging", "Radiation", "Flood"],
 		"freq": 1,
-		"thermo": "hot",
+		"thermo": 2,
 		"flowerLV": 1,
 		"metalLV": 2,
 		"id": 3
@@ -56,9 +56,6 @@ func randomizer():
 	entityRandomizer(randi_range(1, 3))
 	modelRandomizer(randi_range(1, 24)) #model needs size readjusment
 	
-func floweytheflower(freq):
-	pass
-
 func seqCheck(disSeq):
 	if entity_data[entity]["disposal"] == disSeq:
 		print("DISPOSED")

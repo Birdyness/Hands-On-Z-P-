@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://btchw0v37j5bh" path="res://Scenes/pot.tscn" id="10_b5cn8"]
 [ext_resource type="PackedScene" uid="uid://r7toxb2hth54" path="res://Scenes/radio.tscn" id="13_e6ru4"]
 [ext_resource type="Texture2D" uid="uid://b3sglxo4dqf2w" path="res://Assets/Others/cover.png" id="14_sm5re"]
+[ext_resource type="PackedScene" uid="uid://dun8hub68a3w5" path="res://Scenes/metal_detector.tscn" id="16_5tjy5"]
 [ext_resource type="PackedScene" uid="uid://d10x4oi204sdo" path="res://Scenes/shake_vfx.tscn" id="16_y8n5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmrvs"]
@@ -107,6 +108,9 @@ cEntity = NodePath("../entity")
 [node name="Radio" parent="." unique_id=1144881362 instance=ExtResource("13_e6ru4")]
 position = Vector2(1073, 180)
 
+[node name="metalDetector" parent="Radio" unique_id=515012008 instance=ExtResource("16_5tjy5")]
+position = Vector2(-224, 89)
+
 [node name="Cover" type="Sprite2D" parent="." unique_id=420841881]
 position = Vector2(725.1046, 376.38345)
 scale = Vector2(0.17752287, 0.1775229)
@@ -121,6 +125,7 @@ offset_bottom = 42.904785
 
 [node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
 position = Vector2(577, 324)
+metadata/_edit_lock_ = true
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]

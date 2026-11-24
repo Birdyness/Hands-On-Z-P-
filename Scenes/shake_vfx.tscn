@@ -7,6 +7,7 @@
 script = ExtResource("1_rgntm")
 
 [node name="bloodVFX" type="TextureRect" parent="." unique_id=1239791613]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -607.7827
 offset_top = -341.0
 offset_right = 595.8921
