@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b1e13g5fpho8x"
+path="res://.godot/imported/FlowerpotBitMap.png-3f19e258d78a08ebed55346e0022cc89.res"
+
+[deps]
+
+source_file="res://Assets/Buttons/Pot & Flower/FlowerpotBitMap.png"
+dest_files=["res://.godot/imported/FlowerpotBitMap.png-3f19e258d78a08ebed55346e0022cc89.res"]
+
+[params]
+
+create_from=0
+threshold=0.0

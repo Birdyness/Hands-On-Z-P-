@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvah1r055b8tp"
-path="res://.godot/imported/Thermometer Lever.png-dd3da714637c8b1340414c2a4dc56844.ctex"
+uid="uid://b28no571vff2l"
+path="res://.godot/imported/Execution Button.png-a4a51ceab797ab8f3b6a4bf88705a321.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Workdesk/Thermometer Lever.png"
-dest_files=["res://.godot/imported/Thermometer Lever.png-dd3da714637c8b1340414c2a4dc56844.ctex"]
+source_file="res://Assets/Buttons/Execution Button.png"
+dest_files=["res://.godot/imported/Execution Button.png-a4a51ceab797ab8f3b6a4bf88705a321.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bn8j7mr5q6ipv"]
 
-[ext_resource type="Texture2D" uid="uid://cb225rp3151w0" path="res://Assets/Others/wsProtEmpt.png" id="1_dwvh7"]
+[ext_resource type="Texture2D" uid="uid://bxvnj24u60sqt" path="res://Assets/Workdesk/Layout.png" id="1_dwvh7"]
 
 [node name="Node2D" type="Node2D" unique_id=27077772]
 
 [node name="WorkspacePrototype" type="Sprite2D" parent="." unique_id=414393079]
-position = Vector2(577.7222, 320.74997)
-scale = Vector2(0.6002893, 0.59861106)
+position = Vector2(577.02484, 324.84375)
+scale = Vector2(0.30069602, 0.29985535)
 texture = ExtResource("1_dwvh7")

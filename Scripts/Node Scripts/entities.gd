@@ -62,8 +62,8 @@ func seqCheck(disSeq):
 	if entity_data[entity]["disposal"] == disSeq:
 		print("DISPOSED")
 		randomizer()
-		sanity.change(40)
+		sanity.change(20)
 		print(entity) #just to see
 	else:
 		print("WRONG")
-		sanity.change(-20)
+		sanity.change(-10)
