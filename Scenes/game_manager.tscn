@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://btchw0v37j5bh" path="res://Scenes/pot.tscn" id="10_b5cn8"]
 [ext_resource type="PackedScene" uid="uid://r7toxb2hth54" path="res://Scenes/radio.tscn" id="13_e6ru4"]
 [ext_resource type="Texture2D" uid="uid://b3sglxo4dqf2w" path="res://Assets/Others/cover.png" id="14_sm5re"]
-[ext_resource type="Script" uid="uid://bmcrkwpfpbob5" path="res://Scripts/Node Scripts/shake_vfx.gd" id="15_hjqsb"]
+[ext_resource type="PackedScene" uid="uid://d10x4oi204sdo" path="res://Scenes/shake_vfx.tscn" id="16_y8n5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmrvs"]
 
@@ -38,7 +38,7 @@ texture = ExtResource("1_mmt5l")
 position = Vector2(327, 334)
 sanity = NodePath("../SanityBar")
 
-[node name="Layout2" type="Sprite2D" parent="." unique_id=1986899367]
+[node name="backy" type="Sprite2D" parent="." unique_id=1986899367]
 position = Vector2(573, 318.00003)
 scale = Vector2(0.3182292, 0.33194444)
 texture = ExtResource("3_y8n5u")
@@ -119,9 +119,8 @@ offset_top = -41.591553
 offset_right = 207.83472
 offset_bottom = 42.904785
 
-[node name="shakeVFX" type="Camera2D" parent="." unique_id=1438612946]
+[node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
 position = Vector2(577, 324)
-script = ExtResource("15_hjqsb")
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]

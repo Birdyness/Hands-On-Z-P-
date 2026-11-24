@@ -1,4 +1,6 @@
 extends Camera2D
+var tween: Tween
+@onready var blood_vfx: TextureRect = $bloodVFX
 
 var shake_intensity: float = 0.0
 var active_shake_time: float = 0.0
@@ -10,6 +12,9 @@ var shake_time_speed: float = 20.0
 
 var noise = FastNoiseLite.new()
 
+func _ready() -> void:
+	blood_vfx.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
+	
 func _physics_process(delta: float) -> void:
 	if active_shake_time > 0:
 		shake_time += delta*shake_time_speed
@@ -32,3 +37,9 @@ func screen_shake(intensity: int, time: float):
 	shake_intensity = intensity
 	active_shake_time = time
 	shake_time = 0.0
+	
+	if tween:
+			tween.kill()
+	tween = create_tween()
+	tween.tween_property(blood_vfx, "self_modulate", Color(1.0, 1.0, 1.0), 0.05).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(blood_vfx, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)

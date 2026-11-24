@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d10x4oi204sdo"]
+
+[ext_resource type="Script" uid="uid://bmcrkwpfpbob5" path="res://Scripts/Node Scripts/shake_vfx.gd" id="1_rgntm"]
+[ext_resource type="Texture2D" uid="uid://bg86ddg437ewm" path="res://Assets/VFX/bloodSplatterVFX.png" id="2_eck4n"]
+
+[node name="shakeVFX" type="Camera2D" unique_id=1259153282]
+script = ExtResource("1_rgntm")
+
+[node name="bloodVFX" type="TextureRect" parent="." unique_id=1239791613]
+offset_left = -607.7827
+offset_top = -341.0
+offset_right = 595.8921
+offset_bottom = 336.0
+mouse_filter = 2
+texture = ExtResource("2_eck4n")
+expand_mode = 1
