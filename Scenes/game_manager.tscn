@@ -105,11 +105,12 @@ position = Vector2(1002, 487)
 sanity = NodePath("../SanityBar")
 cEntity = NodePath("../entity")
 
+[node name="metalDetector" parent="." unique_id=515012008 node_paths=PackedStringArray("entity") instance=ExtResource("16_5tjy5")]
+position = Vector2(849, 269)
+entity = NodePath("../entity")
+
 [node name="Radio" parent="." unique_id=1144881362 instance=ExtResource("13_e6ru4")]
 position = Vector2(1073, 180)
-
-[node name="metalDetector" parent="Radio" unique_id=515012008 instance=ExtResource("16_5tjy5")]
-position = Vector2(-224, 89)
 
 [node name="Cover" type="Sprite2D" parent="." unique_id=420841881]
 position = Vector2(725.1046, 376.38345)

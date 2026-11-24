@@ -3,6 +3,8 @@ var seq = []
 signal toak(disSeq)
 var notDisplayed = true
 var tween: Tween
+@onready var entity: Entities = $"../entity"
+
 func _ready() -> void:
 		get_parent().get_node("Buttons").dispDown.connect(display)
 		self.show()
@@ -23,10 +25,13 @@ func display():
 		tween.tween_property(self, "position", Vector2(257, 515), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 			
 func threeOfAKind():
-	if seq.size() == 3:
+	if seq.size() == 3 and entity.entity != "Bhael":
 		toak.emit(seq)
 		seq.clear()
-
+	if seq.size() == 4:
+		toak.emit(seq)
+		seq.clear()
+		
 func _on_hanging_button_down() -> void:
 	seq.append("Hanging")
 	threeOfAKind()
