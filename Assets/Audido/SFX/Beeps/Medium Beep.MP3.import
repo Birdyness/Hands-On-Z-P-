@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdk1nuysufddy"
+path="res://.godot/imported/Medium Beep.MP3-b0597b8553d360ce0bd3624a23f62aea.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audido/SFX/Beeps/Medium Beep.MP3"
+dest_files=["res://.godot/imported/Medium Beep.MP3-b0597b8553d360ce0bd3624a23f62aea.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.05
+bpm=0
+beat_count=0
+bar_beats=4

@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cra8jtg15freq" path="res://Scripts/Node Scripts/metal_detector.gd" id="1_elo4q"]
 [ext_resource type="Texture2D" uid="uid://c6xyoh3po8fcy" path="res://Assets/Execution Panel/Unpressed Button.png" id="2_u244r"]
 [ext_resource type="BitMap" uid="uid://b6x3t85uqkcq2" path="res://Assets/Execution Panel/ButtonBitMap.png" id="3_u244r"]
-[ext_resource type="AudioStream" uid="uid://c2wc3d5y7fwg4" path="res://Assets/Audido/SFX/Fast Beep.MP3" id="4_t8h4x"]
-[ext_resource type="AudioStream" uid="uid://cdk1nuysufddy" path="res://Assets/Audido/SFX/Medium Beep.MP3" id="5_vktmd"]
-[ext_resource type="AudioStream" uid="uid://63wob2hlr77q" path="res://Assets/Audido/SFX/Slow Beep.MP3" id="6_8f07b"]
+[ext_resource type="AudioStream" uid="uid://c2wc3d5y7fwg4" path="res://Assets/Audido/SFX/Beeps/Fast Beep.MP3" id="4_t8h4x"]
+[ext_resource type="AudioStream" uid="uid://cdk1nuysufddy" path="res://Assets/Audido/SFX/Beeps/Medium Beep.MP3" id="5_vktmd"]
+[ext_resource type="AudioStream" uid="uid://63wob2hlr77q" path="res://Assets/Audido/SFX/Beeps/Slow Beep.MP3" id="6_8f07b"]
 
 [node name="metalDetector" type="Node2D" unique_id=515012008]
 script = ExtResource("1_elo4q")

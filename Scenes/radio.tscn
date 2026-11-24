@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b5eeguc5cmebs" path="res://Assets/Radio Lights.png" id="1_8y21s"]
 [ext_resource type="Script" uid="uid://emxaqhpn4d8m" path="res://Scripts/Node Scripts/radio.gd" id="1_bdbpc"]
 [ext_resource type="Texture2D" uid="uid://dexptolfod1to" path="res://Assets/Buttons/Radio/Radio Slider.png" id="3_ibud7"]
+[ext_resource type="AudioStream" uid="uid://be3db7npp4qqa" path="res://Assets/Audido/SFX/Frequencies/Interupted Frequency.mp3" id="4_y4nnh"]
+[ext_resource type="AudioStream" uid="uid://cvhlwshm0ivdw" path="res://Assets/Audido/SFX/Frequencies/Frequency.MP3" id="5_jp436"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygha7"]
 
@@ -30,6 +32,24 @@ self_modulate = Color(1.8338826, 1.174473, 0, 1)
 position = Vector2(-1, -9.536743e-07)
 scale = Vector2(0.27004507, 0.27004507)
 texture = ExtResource("1_8y21s")
+
+[node name="InterFreq" type="AudioStreamPlayer2D" parent="." unique_id=320219247]
+stream = ExtResource("4_y4nnh")
+
+[node name="HighFreq" type="AudioStreamPlayer2D" parent="." unique_id=600749241]
+stream = ExtResource("5_jp436")
+volume_db = -7.508
+pitch_scale = 2.52
+max_distance = 5025.0
+
+[node name="MidFreq" type="AudioStreamPlayer2D" parent="." unique_id=866610130]
+stream = ExtResource("5_jp436")
+volume_db = -2.005
+pitch_scale = 1.53
+
+[node name="LowFreq" type="AudioStreamPlayer2D" parent="." unique_id=1803005083]
+stream = ExtResource("5_jp436")
+volume_db = 7.869
 
 [connection signal="drag_ended" from="RadioSlider" to="." method="_on_radio_slider_drag_ended"]
 [connection signal="drag_started" from="RadioSlider" to="." method="_on_radio_slider_drag_started"]

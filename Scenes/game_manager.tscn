@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b28no571vff2l" path="res://Assets/Buttons/Execution Button.png" id="9_jencv"]
 [ext_resource type="PackedScene" uid="uid://btchw0v37j5bh" path="res://Scenes/pot.tscn" id="10_b5cn8"]
 [ext_resource type="PackedScene" uid="uid://r7toxb2hth54" path="res://Scenes/radio.tscn" id="13_e6ru4"]
+[ext_resource type="PackedScene" uid="uid://rryuikwrluqb" path="res://Scenes/thermoScan.tscn" id="14_iu5vk"]
 [ext_resource type="Texture2D" uid="uid://b3sglxo4dqf2w" path="res://Assets/Others/cover.png" id="14_sm5re"]
 [ext_resource type="PackedScene" uid="uid://dun8hub68a3w5" path="res://Scenes/metal_detector.tscn" id="16_5tjy5"]
 [ext_resource type="PackedScene" uid="uid://d10x4oi204sdo" path="res://Scenes/shake_vfx.tscn" id="16_y8n5u"]
@@ -43,6 +44,9 @@ sanity = NodePath("../SanityBar")
 position = Vector2(573, 318.00003)
 scale = Vector2(0.3182292, 0.33194444)
 texture = ExtResource("3_y8n5u")
+
+[node name="Thermo" parent="." unique_id=1399182287 instance=ExtResource("14_iu5vk")]
+position = Vector2(270, -190)
 
 [node name="Layout" parent="." unique_id=27077772 instance=ExtResource("2_e5fcp")]
 position = Vector2(-1, -2)
@@ -130,4 +134,6 @@ metadata/_edit_lock_ = true
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
+[connection signal="drag_ended" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_ended"]
 [connection signal="drag_ended" from="Buttons/ThermoLever" to="Buttons" method="_on_h_slider_drag_ended"]
+[connection signal="drag_started" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_started"]

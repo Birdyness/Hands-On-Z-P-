@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://rryuikwrluqb"]
+
+[ext_resource type="Script" uid="uid://cgxruma1h6wgf" path="res://Scripts/Node Scripts/thermo_scan.gd" id="1_1emc0"]
+[ext_resource type="Texture2D" uid="uid://jwh08wd8rhwr" path="res://Assets/Buttons/Thermometer.png" id="1_e1nxu"]
+
+[node name="Thermo" type="Node2D" unique_id=1399182287]
+script = ExtResource("1_1emc0")
+
+[node name="ThermoScan" type="Sprite2D" parent="." unique_id=141201416]
+position = Vector2(4.7683716e-07, 2.2737368e-13)
+scale = Vector2(0.36573592, 0.3657358)
+texture = ExtResource("1_e1nxu")
+
+[node name="traitCheck" type="Label" parent="." unique_id=1735030140]
+offset_left = -123.0
+offset_top = 19.0
+offset_right = -48.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 23
+text = "HOT"
+
+[node name="Timer" type="Timer" parent="." unique_id=1816278291]

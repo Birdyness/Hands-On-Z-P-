@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2wc3d5y7fwg4"
+path="res://.godot/imported/Fast Beep.MP3-eaf8a139d1995b921925e1d299761268.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audido/SFX/Beeps/Fast Beep.MP3"
+dest_files=["res://.godot/imported/Fast Beep.MP3-eaf8a139d1995b921925e1d299761268.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.04
+bpm=0
+beat_count=0
+bar_beats=4
