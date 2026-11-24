@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dn7tcrqefy4d1"]
 
-[ext_resource type="Texture2D" uid="uid://dpcwb7dhsnnw4" path="res://Assets/Geiger Counter.png" id="1_g8oa5"]
+[ext_resource type="Texture2D" uid="uid://dpcwb7dhsnnw4" path="res://Assets/Others/Geiger Counter.png" id="1_g8oa5"]
 [ext_resource type="Script" uid="uid://btaxjqui8183p" path="res://Scripts/Node Scripts/geiger.gd" id="1_l5l0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]

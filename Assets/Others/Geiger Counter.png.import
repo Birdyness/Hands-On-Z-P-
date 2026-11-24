@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y6j2rtcqfbr0"
-path="res://.godot/imported/Book.png-c3b1d86d1956905a4faa815f1fb8a54e.ctex"
+uid="uid://dpcwb7dhsnnw4"
+path="res://.godot/imported/Geiger Counter.png-de077164fba73f4cb8f4a7b48aaa8e49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Book.png"
-dest_files=["res://.godot/imported/Book.png-c3b1d86d1956905a4faa815f1fb8a54e.ctex"]
+source_file="res://Assets/Others/Geiger Counter.png"
+dest_files=["res://.godot/imported/Geiger Counter.png-de077164fba73f4cb8f4a7b48aaa8e49.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhnenhr6rcm82"]
 
-[ext_resource type="Texture2D" uid="uid://dv8bamu6e6vhc" path="res://Assets/camera.png" id="1_375tr"]
+[ext_resource type="Texture2D" uid="uid://dv8bamu6e6vhc" path="res://Assets/Others/camera.png" id="1_375tr"]
 [ext_resource type="Script" uid="uid://bqa1tnxndh26f" path="res://Scripts/Node Scripts/camera.gd" id="1_f1cf7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]

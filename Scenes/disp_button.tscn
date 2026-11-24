@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvryd0iwhjs2r"]
 
 [ext_resource type="Script" uid="uid://db2l5kd2loeu2" path="res://Scripts/Node Scripts/disposal.gd" id="1_uor34"]
-[ext_resource type="Texture2D" uid="uid://bhif78j04yr76" path="res://Assets/Speaker Buttons.png" id="1_w2soi"]
+[ext_resource type="Texture2D" uid="uid://bhif78j04yr76" path="res://Assets/Others/Speaker Buttons.png" id="1_w2soi"]
 
 [node name="dispButton" type="Node2D" unique_id=1839645826]
 script = ExtResource("1_uor34")

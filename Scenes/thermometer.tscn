@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bfmqasnqtf5j7"]
 
 [ext_resource type="Script" uid="uid://bi5p8mr2xxcxl" path="res://Scripts/Node Scripts/thermometer.gd" id="1_f5lcp"]
-[ext_resource type="Texture2D" uid="uid://dxucfenagho56" path="res://Assets/Thermometer.png" id="1_fubdq"]
+[ext_resource type="Texture2D" uid="uid://dxucfenagho56" path="res://Assets/Others/Thermometer.png" id="1_fubdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(26, 180)

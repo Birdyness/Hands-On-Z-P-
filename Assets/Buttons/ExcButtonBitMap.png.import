@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://bs5pmt66u883c"
+path="res://.godot/imported/ExcButtonBitMap.png-3b903bcc923c08dcf148c7a193c73849.res"
+
+[deps]
+
+source_file="res://Assets/Buttons/ExcButtonBitMap.png"
+dest_files=["res://.godot/imported/ExcButtonBitMap.png-3b903bcc923c08dcf148c7a193c73849.res"]
+
+[params]
+
+create_from=0
+threshold=0.0

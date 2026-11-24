@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxucfenagho56"
-path="res://.godot/imported/Thermometer.png-3752c4c3842547c817289b873924eb2a.ctex"
+uid="uid://bhjgtf2pximp2"
+path="res://.godot/imported/ExcButton.png-22a4353f699a2a1b66dd7556f49a6171.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Thermometer.png"
-dest_files=["res://.godot/imported/Thermometer.png-3752c4c3842547c817289b873924eb2a.ctex"]
+source_file="res://Assets/Buttons/ExcButton.png"
+dest_files=["res://.godot/imported/ExcButton.png-22a4353f699a2a1b66dd7556f49a6171.ctex"]
 
 [params]
 

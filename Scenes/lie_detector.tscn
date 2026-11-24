@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfktmoxgmccx6"]
 
 [ext_resource type="Script" uid="uid://d1g5vkkaebxv0" path="res://Scripts/Node Scripts/lie_detector.gd" id="1_2f6nw"]
-[ext_resource type="Texture2D" uid="uid://b7mtiox2s5fme" path="res://Assets/Lie Detector.png" id="1_046ma"]
+[ext_resource type="Texture2D" uid="uid://b7mtiox2s5fme" path="res://Assets/Others/Lie Detector.png" id="1_046ma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(222, 198)

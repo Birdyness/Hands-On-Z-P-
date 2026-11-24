@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7mtiox2s5fme"
-path="res://.godot/imported/Lie Detector.png-b4d656aa2fb05da19a227df3d6480592.ctex"
+uid="uid://dxucfenagho56"
+path="res://.godot/imported/Thermometer.png-c5c47406e44711061eae8fcb6a1f9b18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Lie Detector.png"
-dest_files=["res://.godot/imported/Lie Detector.png-b4d656aa2fb05da19a227df3d6480592.ctex"]
+source_file="res://Assets/Others/Thermometer.png"
+dest_files=["res://.godot/imported/Thermometer.png-c5c47406e44711061eae8fcb6a1f9b18.ctex"]
 
 [params]
 

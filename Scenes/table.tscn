@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct3duxtxg1v7d"]
 
-[ext_resource type="Texture2D" uid="uid://b2f8how3xohik" path="res://Assets/Table.png" id="1_jd0nb"]
+[ext_resource type="Texture2D" uid="uid://b2f8how3xohik" path="res://Assets/Others/Table.png" id="1_jd0nb"]
+
 
 [node name="Table" type="Area2D" unique_id=956040292]
 

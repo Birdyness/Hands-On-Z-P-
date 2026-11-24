@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g457hb3py7ja"
-path="res://.godot/imported/entitySpriteHolder.png-3785669f00f4353e5e07374f981bb2c1.ctex"
+uid="uid://drtks4x3t1h4n"
+path="res://.godot/imported/backgroundPlaceholder.jpg-7050120063a04236eddf9e1ef9763e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/entitySpriteHolder.png"
-dest_files=["res://.godot/imported/entitySpriteHolder.png-3785669f00f4353e5e07374f981bb2c1.ctex"]
+source_file="res://Assets/Others/backgroundPlaceholder.jpg"
+dest_files=["res://.godot/imported/backgroundPlaceholder.jpg-7050120063a04236eddf9e1ef9763e57.ctex"]
 
 [params]
 

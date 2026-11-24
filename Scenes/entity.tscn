@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bixv88i3niyfn"]
 
 [ext_resource type="Script" uid="uid://ctdo1rqki6fwv" path="res://Scripts/Node Scripts/entities.gd" id="1_l7g7l"]
-[ext_resource type="Texture2D" uid="uid://g457hb3py7ja" path="res://Assets/entitySpriteHolder.png" id="2_egtqx"]
+[ext_resource type="Texture2D" uid="uid://g457hb3py7ja" path="res://Assets/Others/entitySpriteHolder.png" id="2_egtqx"]
 
 [node name="entity" type="Node2D" unique_id=256994302]
 script = ExtResource("1_l7g7l")
