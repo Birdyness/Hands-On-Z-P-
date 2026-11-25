@@ -16,6 +16,7 @@ magnitudeY = 2.0
 [node name="Control" parent="." unique_id=743250380 instance=ExtResource("2_h87bp")]
 
 [node name="BlackScreen" type="TextureRect" parent="Control" unique_id=12579726]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 1153.7778
 offset_bottom = 649.0
