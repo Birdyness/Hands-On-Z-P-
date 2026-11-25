@@ -149,4 +149,4 @@ func seqCheck(disSeq):
 	else:
 		print("WRONG")
 		sanity.change(-10)
-		shake_vfx.screen_shake(15, 0.6)
+		shake_vfx.screen_shake_blood(15, 0.6)

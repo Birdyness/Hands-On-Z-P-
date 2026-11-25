@@ -8,7 +8,7 @@ extends Node2D
 
 var entity_tween: Tween
 var flower_tween: Tween
-
+var gTime = 0
 
 
 func waits(seconds: float) -> void:
@@ -17,6 +17,7 @@ func waits(seconds: float) -> void:
 func _ready() -> void:
 	disp.delay.connect(entityShutter)
 	pot.shutterIt.connect(flowerShutter)
+	pot.shutC.connect(gTimeSet)
 	# add more when making days, like for disable or start of day
 	
 func entityShutter():
@@ -36,6 +37,9 @@ func flowerShutter():
 	flower_tween = create_tween()
 	
 	flower_tween.tween_property(flower_shutter, "position", Vector2(2211.627, 316.277), 1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
-	flower_tween.tween_interval(0.5)
+	flower_tween.tween_interval(gTime)
 	flower_tween.tween_property(flower_shutter, "position", Vector2(2211.627, 1588.496), 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	await waits(1)
+
+func gTimeSet(gTimeR: int):
+	gTime = gTimeR

@@ -117,7 +117,7 @@ script = ExtResource("9_i4mau")
 [node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
 
 [node name="Pot" parent="." unique_id=1347559491 node_paths=PackedStringArray("sanity", "cEntity") instance=ExtResource("10_b5cn8")]
-position = Vector2(1007, 535)
+position = Vector2(328, 849)
 sanity = NodePath("../SanityBar")
 cEntity = NodePath("../entity")
 
@@ -144,8 +144,8 @@ scale = Vector2(0.9999998, 0.9999999)
 texture = ExtResource("17_fuy7q")
 
 [node name="FlowerpotCover" type="Sprite2D" parent="." unique_id=1321165983]
-position = Vector2(341, 607.1458)
-scale = Vector2(1.0888993, 1.1262078)
+position = Vector2(343.00003, 607.75006)
+scale = Vector2(1.0888993, 1.13768)
 texture = ExtResource("22_mivtr")
 
 [node name="dispButton" parent="." unique_id=1839645826 instance=ExtResource("2_sq00h")]
@@ -185,7 +185,7 @@ texture = ExtResource("20_fuy7q")
 
 [node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
 visible = false
-position = Vector2(577, 324)
+position = Vector2(578, 322)
 metadata/_edit_lock_ = true
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]

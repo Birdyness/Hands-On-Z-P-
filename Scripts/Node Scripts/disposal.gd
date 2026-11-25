@@ -48,7 +48,7 @@ func threeOfAKind():
 		seq.clear()
 	
 	canAppend = true
-
+	print(seq)
 func disabled():
 	hanging.disabled = true
 	radiation.disabled = true
@@ -62,18 +62,26 @@ func enabled():
 	flood.disabled = false
 	
 func _on_hanging_button_down() -> void:
+	if canAppend == false:
+		return
 	seq.append("Hanging")
 	threeOfAKind()
 	
 
 func _on_radiation_button_down() -> void:
+	if canAppend == false:
+		return
 	seq.append("Radiation")
 	threeOfAKind()
 
 func _on_compression_button_down() -> void:
+	if canAppend == false:
+		return
 	seq.append("Compression")
 	threeOfAKind()
 
 func _on_flood_button_down() -> void:
+	if canAppend == false:
+		return
 	seq.append("Flood")
 	threeOfAKind()

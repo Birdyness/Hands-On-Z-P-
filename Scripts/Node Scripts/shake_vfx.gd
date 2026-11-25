@@ -58,8 +58,20 @@ func screen_shake(intensity: int, time: float):
 	if tween:
 			tween.kill()
 	tween = create_tween()
+	
+func screen_shake_blood(intensity: int, time: float):
+	randomize()
+	noise.seed = randi()
+	noise.frequency = 2.0
+	
+	shake_intensity = intensity
+	active_shake_time = time
+	shake_time = 0.0
+	
+	if tween:
+			tween.kill()
+	tween = create_tween()
 	tween.tween_property(blood_vfx, "self_modulate", Color(1.0, 1.0, 1.0), 0.05).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(blood_vfx, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	
 	
 	
