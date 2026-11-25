@@ -15,12 +15,15 @@ magnitudeY = 2.0
 
 [node name="Control" parent="." unique_id=743250380 instance=ExtResource("2_h87bp")]
 
-[node name="BlackScreen" type="Sprite2D" parent="Control" unique_id=1746616489]
-position = Vector2(579.00006, 327)
-scale = Vector2(0.6018518, 0.6018519)
+[node name="BlackScreen" type="TextureRect" parent="Control" unique_id=12579726]
+layout_mode = 0
+offset_right = 1153.7778
+offset_bottom = 649.0
+mouse_filter = 2
 texture = ExtResource("3_qf0g6")
+expand_mode = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control" unique_id=928683367]
+[node name="MenuBGM" type="AudioStreamPlayer2D" parent="Control" unique_id=928683367]
 stream = ExtResource("4_up5sg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1589270294]

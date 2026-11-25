@@ -2,8 +2,26 @@ extends Control
 
 @export var game_scene: PackedScene
 const GAME_MANAGER = preload("res://Scenes/game_manager.tscn")
+@onready var bScreen: TextureRect = $BlackScreen
+@onready var menuBGM: AudioStreamPlayer2D = $MenuBGM
+var tween: Tween
 
-
+func _ready() -> void:
+	bScreen.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+	menuBGM.volume_db = -80.0 
+	menuBGM.play()
+	
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	tween.set_parallel(true)
+	
+	tween.tween_property(menuBGM, "volume_db", 0, 2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	
+	tween = create_tween()
+	tween.tween_property(bScreen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0) , 3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	
+	
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
