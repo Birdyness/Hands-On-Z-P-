@@ -1,6 +1,8 @@
 extends Camera2D
 var tween: Tween
 @onready var blood_vfx: TextureRect = $bloodVFX
+@onready var black_screen: TextureRect = $BlackScreen
+@onready var day_1: TextureRect = $Day1
 
 var shake_intensity: float = 0.0
 var active_shake_time: float = 0.0
@@ -14,6 +16,8 @@ var noise = FastNoiseLite.new()
 
 func _ready() -> void:
 	blood_vfx.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
+	black_screen.self_modulate = Color(1.0, 1.0, 1.0)
+	day_1.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 	
 func _physics_process(delta: float) -> void:
 	if active_shake_time > 0:
