@@ -128,7 +128,7 @@ func _ready() -> void:
 	print(entity)
 	
 func modelRandomizer(modelNo):
-	var number = "res://Assets/Entities/model_" + str(modelNo) + ".png"
+	var number = "res://Assets/Entities (OLD)/model_" + str(modelNo) + ".png"
 	$entityHolder.texture = load(number) 
 
 func entityRandomizer(entityID):
@@ -136,9 +136,21 @@ func entityRandomizer(entityID):
 		if entity_data[entPick]["id"] == entityID:
 			entity = entPick
 			break
+
 func randomizer():
 	entityRandomizer(randi_range(1, 13))
-	modelRandomizer(randi_range(1, 24)) #model needs size readjusment
+	randomizeEntity([1,2,3,4,5,6,7,8,9,10])
+
+func randomizeEntity(number: Array):
+	var chosen = get_node("model_" + str(number.pick_random()))
+
+	for child in get_children():
+		if child is Area2D:
+			child.visible = child == chosen
+			child.monitoring = child == chosen
+			child.monitorable = child == chosen
+
+	return chosen
 	
 func seqCheck(disSeq):
 	if entity_data[entity]["disposal"] == disSeq:

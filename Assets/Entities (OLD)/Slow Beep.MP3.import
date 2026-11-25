@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x808t0h3w3ga"
+path="res://.godot/imported/Slow Beep.MP3-3353690d2532726e73c0d0f97c499076.mp3str"
+
+[deps]
+
+source_file="res://Assets/Entities (OLD)/Slow Beep.MP3"
+dest_files=["res://.godot/imported/Slow Beep.MP3-3353690d2532726e73c0d0f97c499076.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

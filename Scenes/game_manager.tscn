@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cof5m02iwcnf" path="res://Scenes/guidebook.tscn" id="4_e6ru4"]
 [ext_resource type="Script" uid="uid://b3owkfx3dyr7t" path="res://Scripts/Node Scripts/buttons.gd" id="5_efn8y"]
 [ext_resource type="Texture2D" uid="uid://bhjgtf2pximp2" path="res://Assets/Buttons/ExcButton/ExcButton.png" id="6_i4mau"]
+[ext_resource type="Texture2D" uid="uid://bsjq1w3d2yf3y" path="res://Assets/MetalDetectorCos/Metal Detector Pole.png" id="6_yanw6"]
 [ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButton/ExcButtonDown.png" id="7_b5cn8"]
+[ext_resource type="Texture2D" uid="uid://ccnp02rb0hfs2" path="res://Assets/MetalDetectorCos/Metal Detector (Interactive).png" id="7_gdqbl"]
+[ext_resource type="Texture2D" uid="uid://de6sqf3qsbcie" path="res://Assets/MetalDetectorCos/Metal Detector Lights (BG Only).png" id="8_a2qng"]
 [ext_resource type="BitMap" uid="uid://bs5pmt66u883c" path="res://Assets/Buttons/ExcButton/ExcButtonBitMap.png" id="8_jencv"]
 [ext_resource type="Script" uid="uid://cxw86x51xyt14" path="res://Scripts/Node Scripts/progress_bar.gd" id="9_i4mau"]
 [ext_resource type="Texture2D" uid="uid://b28no571vff2l" path="res://Assets/Buttons/Execution Button.png" id="9_jencv"]
@@ -41,14 +44,11 @@ position = Vector2(-1, -2)
 metadata/_edit_lock_ = true
 
 [node name="EntityAreaBgm" type="Sprite2D" parent="." unique_id=2097084147]
-self_modulate = Color(2.1824048, 2.1824048, 2.1824048, 1)
+self_modulate = Color(0.9887863, 0.9887863, 0.9887863, 1)
 position = Vector2(342, 323)
 scale = Vector2(0.50756454, 0.50756454)
 texture = ExtResource("2_88ybb")
-
-[node name="entity" parent="." unique_id=256994302 node_paths=PackedStringArray("sanity") instance=ExtResource("1_e5fcp")]
-position = Vector2(327, 334)
-sanity = NodePath("../SanityBar")
+metadata/_edit_lock_ = true
 
 [node name="Thermo" parent="." unique_id=1399182287 instance=ExtResource("14_iu5vk")]
 position = Vector2(270, -190)
@@ -59,6 +59,27 @@ scale = Vector2(0.3078125, 0.3348958)
 texture = ExtResource("1_iu5vk")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=23384131]
+
+[node name="metalDetectorCos" type="Node2D" parent="." unique_id=1006805635]
+position = Vector2(578, 322)
+
+[node name="MetalDetectorPole" type="Sprite2D" parent="metalDetectorCos" unique_id=2000525356]
+position = Vector2(-241.4375, -39)
+scale = Vector2(0.29335642, 0.3070971)
+texture = ExtResource("6_yanw6")
+
+[node name="MetalDetector(interactive)" type="Sprite2D" parent="metalDetectorCos" unique_id=1330221212]
+position = Vector2(-239.8701, 157.00002)
+scale = Vector2(0.293493, 0.29203123)
+texture = ExtResource("7_gdqbl")
+
+[node name="MetalDetectorLights(bgOnly)" type="Sprite2D" parent="metalDetectorCos" unique_id=1440718109]
+position = Vector2(-241, -183)
+scale = Vector2(0.293905, 0.29390493)
+texture = ExtResource("8_a2qng")
+
+[node name="entity" parent="." unique_id=256994302 instance=ExtResource("1_e5fcp")]
+position = Vector2(342, 321)
 
 [node name="Layout2_0" type="Sprite2D" parent="." unique_id=533991287]
 position = Vector2(577.6666, 322.375)
