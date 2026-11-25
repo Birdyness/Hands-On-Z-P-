@@ -1,29 +1,29 @@
 [gd_scene format=3 uid="uid://btchw0v37j5bh"]
 
 [ext_resource type="Script" uid="uid://kdftqdiepdkb" path="res://Scripts/Node Scripts/pot.gd" id="1_b8ggh"]
-[ext_resource type="Texture2D" uid="uid://cvaudi0vrfauw" path="res://Assets/Buttons/Pot & Flower/emptyPot.png" id="2_rj0eo"]
-[ext_resource type="BitMap" uid="uid://dtyew1ay54mph" path="res://Assets/Buttons/Pot & Flower/emptyPotBitMap.png" id="3_rj0eo"]
+[ext_resource type="Texture2D" uid="uid://cjwgtaxni5vui" path="res://Assets/Flowers/Flowerpot.png" id="2_tpvhl"]
+[ext_resource type="BitMap" uid="uid://c373p7pktn60o" path="res://Assets/Flowers/FlowerpotBitMap.png" id="3_kvtqg"]
+[ext_resource type="Texture2D" uid="uid://p61n7v06dyrt" path="res://Assets/Flowers/Red_ Flower-Growing.png" id="4_sptmv"]
 
 [node name="Pot" type="Node2D" unique_id=1347559491]
 script = ExtResource("1_b8ggh")
 
-[node name="potCurrent" type="Sprite2D" parent="." unique_id=1887733026]
-position = Vector2(-1.000001, -3)
-scale = Vector2(0.68396217, 0.6839623)
-texture = ExtResource("2_rj0eo")
-
 [node name="TextureButton" type="TextureButton" parent="." unique_id=812253606]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -94.0
-offset_top = -127.0
-offset_right = 93.0
-offset_bottom = 119.98114
-texture_normal = ExtResource("2_rj0eo")
-texture_click_mask = ExtResource("3_rj0eo")
+offset_left = -76.0
+offset_top = -68.0
+offset_right = 73.59799
+offset_bottom = 62.0
+texture_normal = ExtResource("2_tpvhl")
+texture_click_mask = ExtResource("3_kvtqg")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Timer" type="Timer" parent="." unique_id=847951505]
 one_shot = true
+
+[node name="potFlower" type="Sprite2D" parent="." unique_id=1825308661]
+position = Vector2(-7, -109)
+scale = Vector2(0.21660306, 0.21660303)
+texture = ExtResource("4_sptmv")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -4,6 +4,12 @@ signal toak(disSeq)
 var notDisplayed = true
 var tween: Tween
 @onready var entity: Entities = $"../entity"
+@onready var hanging: TextureButton = $Hanging
+@onready var radiation: TextureButton = $Radiation
+@onready var compression: TextureButton = $Compression
+@onready var flood: TextureButton = $Flood
+var canAppend = true
+signal delay
 
 func _ready() -> void:
 		get_parent().get_node("Buttons").dispDown.connect(display)
@@ -23,15 +29,38 @@ func display():
 			tween.kill()
 		tween = create_tween()
 		tween.tween_property(self, "position", Vector2(257, 515), 0.5).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-			
+		
+func waits(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
 func threeOfAKind():
+	if canAppend == false:
+		return
+	canAppend = false
+	delay.emit()
+	
+	await waits(3)
 	if seq.size() == 3 and entity.entity != "Bhael":
 		toak.emit(seq)
 		seq.clear()
 	if seq.size() == 4:
 		toak.emit(seq)
 		seq.clear()
-		
+	
+	canAppend = true
+
+func disabled():
+	hanging.disabled = true
+	radiation.disabled = true
+	compression.disabled = true
+	flood.disabled = true
+
+func enabled():
+	hanging.disabled = false
+	radiation.disabled = false
+	compression.disabled = false
+	flood.disabled = false
+	
 func _on_hanging_button_down() -> void:
 	seq.append("Hanging")
 	threeOfAKind()

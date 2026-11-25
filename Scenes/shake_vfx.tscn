@@ -19,6 +19,7 @@ texture = ExtResource("2_eck4n")
 expand_mode = 1
 
 [node name="BlackScreen" type="TextureRect" parent="." unique_id=1342073608]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -576.0
 offset_top = -324.0
 offset_right = 576.0
@@ -28,6 +29,7 @@ texture = ExtResource("3_hkxuq")
 expand_mode = 1
 
 [node name="Day1" type="TextureRect" parent="." unique_id=325574500]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -576.0
 offset_top = -325.0
 offset_right = 576.0

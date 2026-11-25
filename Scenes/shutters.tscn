@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://qrdpltjw2022"]
+
+[ext_resource type="Texture2D" uid="uid://bqyvl5dyg8753" path="res://Assets/Workdesk/Entity Shutter.png" id="1_o3vri"]
+[ext_resource type="Texture2D" uid="uid://moi3kggw2gjm" path="res://Assets/Workdesk/Flower Shutter.png" id="2_byobo"]
+
+[node name="Shutters" type="Node2D" unique_id=1673432183]
+scale = Vector2(0.30262113, 0.302621)
+
+[node name="EntityShutter" type="Sprite2D" parent="." unique_id=2132254677]
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("1_o3vri")
+
+[node name="FlowerShutter" type="Sprite2D" parent="." unique_id=2009218555]
+position = Vector2(2211.6272, 316.27734)
+scale = Vector2(0.9942818, 0.9942823)
+texture = ExtResource("2_byobo")
