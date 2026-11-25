@@ -1,22 +1,36 @@
 [gd_scene format=3 uid="uid://rryuikwrluqb"]
 
 [ext_resource type="Script" uid="uid://cgxruma1h6wgf" path="res://Scripts/Node Scripts/thermo_scan.gd" id="1_1emc0"]
-[ext_resource type="Texture2D" uid="uid://jwh08wd8rhwr" path="res://Assets/Buttons/Thermometer.png" id="1_e1nxu"]
+[ext_resource type="Texture2D" uid="uid://wpmqtmoij0wm" path="res://Assets/ThermoScan/1 - No Indicator.png" id="2_1emc0"]
 
-[node name="Thermo" type="Node2D" unique_id=1399182287]
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 29.0
+
+[node name="Thermo" type="Area2D" unique_id=954403105]
 script = ExtResource("1_1emc0")
 
-[node name="ThermoScan" type="Sprite2D" parent="." unique_id=141201416]
-position = Vector2(4.7683716e-07, 2.2737368e-13)
-scale = Vector2(0.36573592, 0.3657358)
-texture = ExtResource("1_e1nxu")
+[node name="ThermoScan" type="Sprite2D" parent="." unique_id=526112895]
+position = Vector2(0, -55)
+scale = Vector2(0.19890949, 0.19890949)
+texture = ExtResource("2_1emc0")
 
 [node name="traitCheck" type="Label" parent="." unique_id=1735030140]
-offset_left = -123.0
-offset_top = 19.0
-offset_right = -48.0
-offset_bottom = 51.0
+offset_left = -84.0
+offset_top = 26.0
+offset_right = -9.0
+offset_bottom = 58.0
 theme_override_font_sizes/font_size = 23
 text = "HOT"
 
 [node name="Timer" type="Timer" parent="." unique_id=1816278291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1534463198]
+position = Vector2(22, 113)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Button" type="Button" parent="." unique_id=2066434280]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 83.0
+offset_top = -3.0
+offset_right = 119.0
+offset_bottom = 88.0

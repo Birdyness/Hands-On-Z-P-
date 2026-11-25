@@ -149,7 +149,8 @@ func randomizeEntity(number: Array):
 			child.visible = child == chosen
 			child.monitoring = child == chosen
 			child.monitorable = child == chosen
-
+			child.get_node("mColl").disabled = child != chosen
+			
 	return chosen
 	
 func seqCheck(disSeq):

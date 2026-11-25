@@ -50,9 +50,6 @@ scale = Vector2(0.50756454, 0.50756454)
 texture = ExtResource("2_88ybb")
 metadata/_edit_lock_ = true
 
-[node name="Thermo" parent="." unique_id=1399182287 instance=ExtResource("14_iu5vk")]
-position = Vector2(270, -190)
-
 [node name="backy" type="Sprite2D" parent="." unique_id=1474035280]
 position = Vector2(564.00006, 312)
 scale = Vector2(0.3078125, 0.3348958)
@@ -137,6 +134,9 @@ entity = NodePath("../entity")
 [node name="Radio" parent="." unique_id=1144881362 instance=ExtResource("13_e6ru4")]
 position = Vector2(1073, 180)
 
+[node name="Thermo" parent="." unique_id=1399182287 instance=ExtResource("14_iu5vk")]
+position = Vector2(353, 331)
+
 [node name="Shutters" type="Node2D" parent="." unique_id=1673432183]
 position = Vector2(340.71484, 319.2878)
 scale = Vector2(0.30262113, 0.302621)
@@ -210,6 +210,6 @@ metadata/_edit_lock_ = true
 
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
 [connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
-[connection signal="drag_ended" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_ended"]
 [connection signal="drag_ended" from="Buttons/ThermoLever" to="Buttons" method="_on_h_slider_drag_ended"]
+[connection signal="drag_ended" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_ended"]
 [connection signal="drag_started" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_started"]
