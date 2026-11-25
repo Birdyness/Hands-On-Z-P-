@@ -22,7 +22,7 @@ stretch_mode = 0
 one_shot = true
 
 [node name="potFlower" type="Sprite2D" parent="." unique_id=1825308661]
-position = Vector2(-7, -109)
+position = Vector2(-8, -111)
 scale = Vector2(0.21660306, 0.21660303)
 texture = ExtResource("4_sptmv")
 

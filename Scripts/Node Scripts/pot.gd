@@ -4,6 +4,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 var curPhase = 0
 @onready var pot_flower: Sprite2D = $potFlower
+@onready var texture_button: TextureButton = $TextureButton
 var tween: Tween
 signal shutterIt
 signal shutC
@@ -31,13 +32,15 @@ func witheredS():
 func waits(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 
+
 func normal():
 	pot_flower.show()
 	growingN()
 	timer.start(5)
 	await timer.timeout
 	normalS()
-	goBack(5)
+	await waits(1)
+	goBack()
 
 func altered():
 	pot_flower.show()
@@ -45,7 +48,8 @@ func altered():
 	timer.start(5)
 	await timer.timeout
 	alteredS()
-	goBack(5)
+	await waits(1)
+	goBack()
 	
 func manipulation():
 	pot_flower.show()
@@ -53,7 +57,8 @@ func manipulation():
 	timer.start(10)
 	await timer.timeout
 	normalS()
-	goBack(10)
+	await waits(1)
+	goBack()
 
 func withered():
 	pot_flower.show()
@@ -65,32 +70,35 @@ func withered():
 	timer.start(5)
 	await timer.timeout
 	witheredS()
-	goBack(5)
+	await waits(1)
+	goBack()
 	
 func _ready() -> void:
 	pot_flower.hide()
 	global_position = Vector2(1007, 535)
 	
-func goBack(growT: int):
-	await waits(growT)
+func goBack():
 	if tween:
 		tween.kill()
 	tween = create_tween()
-	tween.tween_property(self, "global_position", Vector2(329,810), 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, "position", Vector2(329,810), 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	await tween.finished
 	global_position = Vector2(1007, 535)
-	
+	texture_button.disabled = false
 	
 func _on_texture_button_pressed() -> void:
+	texture_button.disabled = true
+	pot_flower.hide()
+	sanity.change(-5)
 	var curEnt = cEntity.entity_data[cEntity.entity]["flowerLV"]
 	if curEnt == 0:
-		normal()
-		shutC.emit(5)
+		shutC.emit(7)
 	elif curEnt == 1:
-		shutC.emit(5)
+		shutC.emit(7)
 	elif curEnt == 2:
-		shutC.emit(10)
+		shutC.emit(12)
 	else:
-		shutC.emit(5)
+		shutC.emit(7)
 	
 	await waits(0.5)
 	shutterIt.emit()
@@ -101,13 +109,12 @@ func _on_texture_button_pressed() -> void:
 	tween = create_tween()
 	tween.tween_property(self, "position", Vector2(329,553), 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	
-	if curPhase != 1:
-		sanity.change(-5)
-		if curEnt == 0:
-			normal()
-		elif curEnt == 1:
-			altered()
-		elif curEnt == 2:
-			manipulation()
-		else:
-			withered()
+	
+	if curEnt == 0:
+		normal()
+	elif curEnt == 1:
+		altered()
+	elif curEnt == 2:
+		manipulation()
+	else:
+		withered()

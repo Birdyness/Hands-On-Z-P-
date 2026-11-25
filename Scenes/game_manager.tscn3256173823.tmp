@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://cheb77i32fs1l"]
+
+[ext_resource type="PackedScene" uid="uid://bixv88i3niyfn" path="res://Scenes/entity.tscn" id="1_e5fcp"]
+[ext_resource type="Texture2D" uid="uid://cqe8y6a0bf6wb" path="res://Assets/Workdesk/- Layout 2.0 -.png" id="1_iu5vk"]
+[ext_resource type="Texture2D" uid="uid://d0lkbee41kbdb" path="res://Assets/Workdesk/entityAreaBGM.png" id="2_88ybb"]
+[ext_resource type="PackedScene" uid="uid://bn8j7mr5q6ipv" path="res://Scenes/workspacev2.tscn" id="2_e5fcp"]
+[ext_resource type="PackedScene" uid="uid://cvryd0iwhjs2r" path="res://Scenes/disp_button.tscn" id="2_sq00h"]
+[ext_resource type="PackedScene" uid="uid://cof5m02iwcnf" path="res://Scenes/guidebook.tscn" id="4_e6ru4"]
+[ext_resource type="Script" uid="uid://b3owkfx3dyr7t" path="res://Scripts/Node Scripts/buttons.gd" id="5_efn8y"]
+[ext_resource type="Texture2D" uid="uid://bhjgtf2pximp2" path="res://Assets/Buttons/ExcButton/ExcButton.png" id="6_i4mau"]
+[ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButton/ExcButtonDown.png" id="7_b5cn8"]
+[ext_resource type="BitMap" uid="uid://bs5pmt66u883c" path="res://Assets/Buttons/ExcButton/ExcButtonBitMap.png" id="8_jencv"]
+[ext_resource type="Script" uid="uid://cxw86x51xyt14" path="res://Scripts/Node Scripts/progress_bar.gd" id="9_i4mau"]
+[ext_resource type="Texture2D" uid="uid://b28no571vff2l" path="res://Assets/Buttons/Execution Button.png" id="9_jencv"]
+[ext_resource type="PackedScene" uid="uid://btchw0v37j5bh" path="res://Scenes/pot.tscn" id="10_b5cn8"]
+[ext_resource type="PackedScene" uid="uid://r7toxb2hth54" path="res://Scenes/radio.tscn" id="13_e6ru4"]
+[ext_resource type="PackedScene" uid="uid://rryuikwrluqb" path="res://Scenes/thermoScan.tscn" id="14_iu5vk"]
+[ext_resource type="Texture2D" uid="uid://b3sglxo4dqf2w" path="res://Assets/Others/cover.png" id="14_sm5re"]
+[ext_resource type="PackedScene" uid="uid://dun8hub68a3w5" path="res://Scenes/metal_detector.tscn" id="16_5tjy5"]
+[ext_resource type="PackedScene" uid="uid://d10x4oi204sdo" path="res://Scenes/shake_vfx.tscn" id="16_y8n5u"]
+[ext_resource type="Texture2D" uid="uid://bqyvl5dyg8753" path="res://Assets/Workdesk/Entity Shutter.png" id="17_fuy7q"]
+[ext_resource type="Script" uid="uid://bv4rj66hfcxvb" path="res://Scripts/Node Scripts/shutters.gd" id="17_v2ahw"]
+[ext_resource type="Texture2D" uid="uid://moi3kggw2gjm" path="res://Assets/Workdesk/Flower Shutter.png" id="18_uj5f7"]
+[ext_resource type="Texture2D" uid="uid://bj10i8a1fxn2h" path="res://Assets/Workdesk/FlowerShutterCover.png" id="20_fuy7q"]
+[ext_resource type="Texture2D" uid="uid://b2xsengv55yc4" path="res://Assets/Workdesk/EntityShutterCover.png" id="21_fuy7q"]
+[ext_resource type="Texture2D" uid="uid://j0bwnqdrw4uv" path="res://Assets/Flowers/FlowerpotCover.png" id="22_mivtr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmrvs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6ru4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sm5re"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.20392157, 0.6, 0.6, 1)
+
+[node name="gameManager" type="Node2D" unique_id=205253772]
+
+[node name="Layout" parent="." unique_id=27077772 instance=ExtResource("2_e5fcp")]
+position = Vector2(-1, -2)
+metadata/_edit_lock_ = true
+
+[node name="EntityAreaBgm" type="Sprite2D" parent="." unique_id=2097084147]
+self_modulate = Color(2.1824048, 2.1824048, 2.1824048, 1)
+position = Vector2(342, 323)
+scale = Vector2(0.50756454, 0.50756454)
+texture = ExtResource("2_88ybb")
+
+[node name="entity" parent="." unique_id=256994302 node_paths=PackedStringArray("sanity") instance=ExtResource("1_e5fcp")]
+position = Vector2(327, 334)
+sanity = NodePath("../SanityBar")
+
+[node name="Thermo" parent="." unique_id=1399182287 instance=ExtResource("14_iu5vk")]
+position = Vector2(270, -190)
+
+[node name="backy" type="Sprite2D" parent="." unique_id=1474035280]
+position = Vector2(564.00006, 312)
+scale = Vector2(0.3078125, 0.3348958)
+texture = ExtResource("1_iu5vk")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=23384131]
+
+[node name="Layout2_0" type="Sprite2D" parent="." unique_id=533991287]
+position = Vector2(577.6666, 322.375)
+scale = Vector2(0.29965279, 0.29965279)
+texture = ExtResource("1_iu5vk")
+
+[node name="guidebook" parent="." unique_id=443674428 instance=ExtResource("4_e6ru4")]
+position = Vector2(726, 500)
+
+[node name="Buttons" type="Control" parent="." unique_id=845528170]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1771.0
+offset_top = 844.0
+offset_right = 1867.0
+offset_bottom = 921.0
+script = ExtResource("5_efn8y")
+
+[node name="Execution" type="TextureButton" parent="Buttons" unique_id=548846823]
+layout_mode = 0
+offset_left = -968.0
+offset_top = -310.0
+offset_right = -894.12177
+offset_bottom = -238.0
+action_mode = 0
+texture_normal = ExtResource("6_i4mau")
+texture_pressed = ExtResource("7_b5cn8")
+texture_click_mask = ExtResource("8_jencv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ThermoLever" type="HSlider" parent="Buttons" unique_id=1908271134]
+layout_mode = 0
+offset_left = -1002.0
+offset_top = -595.0
+offset_right = -902.6925
+offset_bottom = -531.0
+rotation = 1.5707964
+theme_override_icons/grabber = ExtResource("9_jencv")
+theme_override_icons/grabber_highlight = ExtResource("9_jencv")
+theme_override_icons/grabber_disabled = ExtResource("9_jencv")
+theme_override_styles/slider = SubResource("StyleBoxFlat_kmrvs")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_e6ru4")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_sm5re")
+
+[node name="SanityBar" type="ProgressBar" parent="." unique_id=1411194817]
+visible = false
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 303.0
+offset_bottom = 32.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_g4v7s")
+value = 40.0
+script = ExtResource("9_i4mau")
+
+[node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
+
+[node name="Pot" parent="." unique_id=1347559491 node_paths=PackedStringArray("sanity", "cEntity") instance=ExtResource("10_b5cn8")]
+position = Vector2(328, 849)
+sanity = NodePath("../SanityBar")
+cEntity = NodePath("../entity")
+
+[node name="metalDetector" parent="." unique_id=515012008 node_paths=PackedStringArray("entity") instance=ExtResource("16_5tjy5")]
+position = Vector2(849, 269)
+entity = NodePath("../entity")
+
+[node name="Radio" parent="." unique_id=1144881362 instance=ExtResource("13_e6ru4")]
+position = Vector2(1073, 180)
+
+[node name="Shutters" type="Node2D" parent="." unique_id=1673432183]
+position = Vector2(340.71484, 319.2878)
+scale = Vector2(0.30262113, 0.302621)
+script = ExtResource("17_v2ahw")
+
+[node name="FlowerShutter" type="Sprite2D" parent="Shutters" unique_id=2009218555]
+position = Vector2(2211.627, 1588.496)
+scale = Vector2(0.99428165, 0.9942823)
+texture = ExtResource("18_uj5f7")
+
+[node name="EntityShutter" type="Sprite2D" parent="Shutters" unique_id=2132254677]
+position = Vector2(0, -1900)
+scale = Vector2(0.9999998, 0.9999999)
+texture = ExtResource("17_fuy7q")
+
+[node name="FlowerpotCover" type="Sprite2D" parent="." unique_id=1321165983]
+position = Vector2(343.00003, 607.75006)
+scale = Vector2(1.0888993, 1.13768)
+texture = ExtResource("22_mivtr")
+
+[node name="dispButton" parent="." unique_id=1839645826 instance=ExtResource("2_sq00h")]
+position = Vector2(-668, 515)
+
+[node name="Cover" type="Sprite2D" parent="." unique_id=420841881]
+position = Vector2(725.1046, 376.38345)
+scale = Vector2(0.17752287, 0.1775229)
+texture = ExtResource("14_sm5re")
+
+[node name="Cover" type="Button" parent="Cover" unique_id=294263515]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -192.11401
+offset_top = -41.591553
+offset_right = 207.83472
+offset_bottom = 42.904785
+
+[node name="EntityShutterCover" type="Sprite2D" parent="." unique_id=1940983574]
+position = Vector2(341.05936, 30)
+scale = Vector2(0.62831455, 0.6464647)
+texture = ExtResource("21_fuy7q")
+
+[node name="FlowerShutterCover" type="Sprite2D" parent="." unique_id=1830290462]
+position = Vector2(986, 625.5)
+scale = Vector2(0.26683155, 0.2645164)
+texture = ExtResource("20_fuy7q")
+
+[node name="FlowerShutterCover2" type="Sprite2D" parent="FlowerShutterCover" unique_id=814062653]
+position = Vector2(-2409.7603, -2474.3267)
+scale = Vector2(2.3684118, 1.353657)
+texture = ExtResource("20_fuy7q")
+
+[node name="FlowerShutterCover2" type="Sprite2D" parent="FlowerShutterCover/FlowerShutterCover2" unique_id=109911246]
+position = Vector2(1030.1172, 1927.0269)
+scale = Vector2(0.5893483, 0.5393938)
+texture = ExtResource("20_fuy7q")
+
+[node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
+visible = false
+position = Vector2(578, 322)
+metadata/_edit_lock_ = true
+
+[connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]
+[connection signal="button_up" from="Buttons/Execution" to="Buttons" method="_on_execution_button_up"]
+[connection signal="drag_ended" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_ended"]
+[connection signal="drag_ended" from="Buttons/ThermoLever" to="Buttons" method="_on_h_slider_drag_ended"]
+[connection signal="drag_started" from="Buttons/ThermoLever" to="Thermo" method="_on_thermo_lever_drag_started"]
