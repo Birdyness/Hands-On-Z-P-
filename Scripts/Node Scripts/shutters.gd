@@ -50,4 +50,5 @@ func setFlowerShutter(dayi: int):
 	if dayi == 1:
 		flower_shutter.position = Vector2(2211.627, 316.277)
 	else:
+		await waits(3)
 		flower_shutter.position = Vector2(2211.627, 1588.496)   

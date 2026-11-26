@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfc73rdacw2ql"]
+
+[ext_resource type="Script" uid="uid://ddxkbr0u8kmef" path="res://Scripts/Node Scripts/dialogue_box.gd" id="1_hygrc"]
+
+[node name="dialogueBox" type="Node2D" unique_id=81260716]
+script = ExtResource("1_hygrc")
+
+[node name="dialogueBox" type="Sprite2D" parent="." unique_id=1034987758]
+
+[node name="Button" type="Button" parent="." unique_id=247576464]
+offset_right = 8.0
+offset_bottom = 8.0

@@ -6,11 +6,16 @@ const unpressed = preload("res://Assets/Execution Panel/Unpressed Button.png")
 const pressed = preload("res://Assets/Execution Panel/Pressed Button.png")
 @onready var game_manager: Node2D = $".."
 
+
 var broken = false
 signal brokenChanged(is_broken: bool)
 var press = false
 @onready var texture_button: TextureButton = $TextureButton
 signal state(is_on: bool)
+
+func waits(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
 func _ready() -> void:
 	set_process(false)
 	game_manager.dayEnd.connect(rollBroken)
@@ -78,4 +83,5 @@ func nonotouchy(dayi: int):
 	if dayi <= 3:
 		self.position = Vector2(1271.0, 283.0)
 	else:
+		await waits(3)
 		self.position = Vector2(849, 269)   
