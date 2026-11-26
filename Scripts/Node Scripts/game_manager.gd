@@ -9,7 +9,6 @@ signal dayEnd
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$entity.entityDisposed.connect(dispCounter)
-	print("LOADED day: ", day, " Global: ", Global.day)
 
 func endDay():
 	print("DAY ", day, " ENDED")
@@ -19,7 +18,6 @@ func endDay():
 	dispHardCount = 0
 	dispCount = 0
 	dayEnd.emit(day)
-	print("SAVED Global.day = ", Global.day)
 	
 func dispCounter():
 	if entity.entity_data[entity.entity]["id"] <= 10:

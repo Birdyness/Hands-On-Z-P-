@@ -7,6 +7,9 @@ var tween: Tween
 @onready var days = game_manager.day
 @onready var day_label: Label = $DayLabel
 @onready var boom: AudioStreamPlayer2D = $BOOM
+@onready var bgm: AudioStreamPlayer2D = $BGM
+
+var bgmVol
 
 var shake_intensity: float = 0.0
 var active_shake_time: float = 0.0
@@ -19,6 +22,9 @@ var shake_time_speed: float = 20.0
 var noise = FastNoiseLite.new()
 
 func _ready() -> void:
+	bgm.play()
+	bgmVol = bgm.volume_db
+	bgm.volume_db = -80
 	$stopBlock.mouse_filter = Control.MOUSE_FILTER_STOP
 	game_manager.dayEnd.connect(dayLabel)
 	day_label.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
@@ -79,6 +85,7 @@ func dayLabel(dayEnd: int):
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 1.5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property(bgm, "volume_db", -80, 1.5)
 	await tween.finished
 	dayIntro(dayEnd)
 func dayIntro(dayi: int):
@@ -89,6 +96,7 @@ func dayIntro(dayi: int):
 		tween.kill()
 	tween = create_tween()
 	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	tween.parallel().tween_property(bgm, "volume_db", bgmVol, 3)
 	await waits(3)
 	$stopBlock.mouse_filter = Control.MOUSE_FILTER_IGNORE
 func showDay(dayi: int):
