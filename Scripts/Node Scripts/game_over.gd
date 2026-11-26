@@ -67,4 +67,5 @@ func _on_back_pressed() -> void:
 	tween = create_tween()
 	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0), 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	await waits(2)
+	Global.day = 1
 	get_tree().change_scene_to_file("res://Scenes/titlescreen.tscn")

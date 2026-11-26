@@ -42,3 +42,7 @@ func dispCounter():
 	if dispCount == 10 and day >= 6:
 		endDay()
 		
+
+
+func _on_fix_pressed() -> void:
+	pass # Replace with function body.

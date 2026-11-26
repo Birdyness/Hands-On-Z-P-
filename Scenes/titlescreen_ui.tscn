@@ -20,7 +20,7 @@ offset_top = 51.0
 offset_right = 169.0
 offset_bottom = 74.0
 scale = Vector2(3.76, 3.76)
-text = "Game Name"
+text = "ZED: Zetarium Exorcism Department"
 
 [node name="StartButton" type="Button" parent="." unique_id=2011346747]
 layout_mode = 0
