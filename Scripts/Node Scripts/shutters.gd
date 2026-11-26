@@ -27,7 +27,7 @@ func entityShutter():
 		entity_tween.kill()
 	entity_tween = create_tween()
 	
-	entity_tween.tween_property(entity_shutter, "position", Vector2(0, 0), 1).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	entity_tween.tween_property(entity_shutter, "position", Vector2(0, 0), .6)
 	entity_tween.tween_interval(0.5)
 	entity_tween.tween_property(entity_shutter, "position", Vector2(0, -1900), 2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	await waits(1)

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qs40ua81bfhw" path="res://Assets/GUI/GameOver/Text 2_ Retry.png" id="4_uylih"]
 [ext_resource type="Texture2D" uid="uid://d27rn20pe8p3a" path="res://Assets/GUI/GameOver/Text 3_ Back to Menu.png" id="5_3817r"]
 [ext_resource type="Texture2D" uid="uid://bq1ieslvqcq1f" path="res://Assets/Screen Transition/Black Screen.png" id="6_mitgx"]
+[ext_resource type="AudioStream" uid="uid://cej5b5dvkcwq7" path="res://Assets/Audido/SFX/LampHumming.wav" id="8_gjtdd"]
 
 [node name="gameOverScreen" type="Node2D" unique_id=708776091]
 script = ExtResource("1_rjluv")
@@ -60,6 +61,11 @@ offset_bottom = 427.0
 self_modulate = Color(1, 1, 1, 0)
 offset_right = 1150.0
 offset_bottom = 648.0
+
+[node name="DeadBGM" type="AudioStreamPlayer2D" parent="." unique_id=1523828904]
+stream = ExtResource("8_gjtdd")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
 [connection signal="mouse_exited" from="Back" to="." method="_on_back_mouse_exited"]

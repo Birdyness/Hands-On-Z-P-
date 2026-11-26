@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dd4fia63p25dh" path="res://Assets/Entity Models/Normal Entity - 1.png" id="18_gi02j"]
 [ext_resource type="Texture2D" uid="uid://moi3kggw2gjm" path="res://Assets/Workdesk/Flower Shutter.png" id="18_uj5f7"]
 [ext_resource type="Texture2D" uid="uid://bj10i8a1fxn2h" path="res://Assets/Workdesk/FlowerShutterCover.png" id="20_fuy7q"]
+[ext_resource type="AudioStream" uid="uid://c7ky2uj5f6n8o" path="res://Assets/Audido/SFX/scream again.mp3" id="21_8c7wn"]
 [ext_resource type="Texture2D" uid="uid://b2xsengv55yc4" path="res://Assets/Workdesk/EntityShutterCover.png" id="21_fuy7q"]
 [ext_resource type="Texture2D" uid="uid://j0bwnqdrw4uv" path="res://Assets/Flowers/FlowerpotCover.png" id="22_mivtr"]
 [ext_resource type="PackedScene" uid="uid://ms7xdyeryiac" path="res://Scenes/book_inside.tscn" id="41_g1y4a"]
@@ -168,6 +169,9 @@ texture = ExtResource("18_gi02j")
 [node name="mColl" type="CollisionShape2D" parent="entity/scan_area" unique_id=1077093062]
 position = Vector2(0, -75)
 shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="ScreamSFX" type="AudioStreamPlayer" parent="entity" unique_id=1938392145]
+stream = ExtResource("21_8c7wn")
 
 [node name="Layout2_0" type="Sprite2D" parent="." unique_id=533991287]
 position = Vector2(577.6666, 322.375)
@@ -313,6 +317,7 @@ position = Vector2(525, 369)
 position = Vector2(578, 322)
 
 [connection signal="pressed" from="metalDetectorCos/Fix" to="metalDetectorCos" method="_on_fix_pressed"]
+[connection signal="entityDisposed" from="entity" to="dispButton" method="_on_entity_entity_disposed"]
 [connection signal="area_entered" from="entity/scan_area" to="Thermo" method="_on_scan_area_area_entered"]
 [connection signal="area_exited" from="entity/scan_area" to="Thermo" method="_on_scan_area_area_exited"]
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]

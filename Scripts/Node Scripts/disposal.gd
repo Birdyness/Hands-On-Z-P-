@@ -8,6 +8,8 @@ var tween: Tween
 @onready var radiation: TextureButton = $Radiation
 @onready var compression: TextureButton = $Compression
 @onready var flood: TextureButton = $Flood
+@onready var shutSFX: AudioStreamPlayer = $ShutterSFX
+@onready var deadSFX: AudioStreamPlayer = $ScreamSFX
 var canAppend = true
 signal delay
 
@@ -15,6 +17,7 @@ func _ready() -> void:
 		get_parent().get_node("Buttons").dispDown.connect(display)
 		self.show()
 		global_position = Vector2(-259, 515)
+		
 		
 func display():
 	if notDisplayed == false:
@@ -39,7 +42,8 @@ func threeOfAKind():
 	canAppend = false
 	delay.emit()
 	
-	await waits(3)
+	shutSFX.play()
+	await waits(1)
 	if seq.size() == 3 and entity.entity != "Bhael":
 		toak.emit(seq)
 		seq.clear()
@@ -85,3 +89,7 @@ func _on_flood_button_down() -> void:
 		return
 	seq.append("Flood")
 	threeOfAKind()
+
+
+func _on_entity_entity_disposed() -> void:
+	deadSFX.play()
