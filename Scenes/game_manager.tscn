@@ -306,12 +306,11 @@ script = ExtResource("9_i4mau")
 [node name="book_inside" parent="." unique_id=153465476 instance=ExtResource("41_g1y4a")]
 position = Vector2(663, 277)
 
-[node name="dialogueBox" parent="." unique_id=81260716 instance=ExtResource("42_i5mnv")]
-position = Vector2(525, 369)
-
 [node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
 position = Vector2(578, 322)
-metadata/_edit_lock_ = true
+
+[node name="dialogueBox" parent="." unique_id=81260716 instance=ExtResource("42_i5mnv")]
+position = Vector2(525, 369)
 
 [connection signal="pressed" from="metalDetectorCos/Fix" to="metalDetectorCos" method="_on_fix_pressed"]
 [connection signal="area_entered" from="entity/scan_area" to="Thermo" method="_on_scan_area_area_entered"]

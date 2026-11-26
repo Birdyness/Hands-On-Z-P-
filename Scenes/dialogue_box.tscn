@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://bfc73rdacw2ql"]
 
 [ext_resource type="Script" uid="uid://ddxkbr0u8kmef" path="res://Scripts/Node Scripts/dialogue_box.gd" id="1_hygrc"]
-[ext_resource type="Texture2D" uid="uid://b08t4o7j4k2fx" path="res://Assets/Dialogue/Tutorial/Text 1.png" id="2_l8qb8"]
+[ext_resource type="Texture2D" uid="uid://61j6h4ts7st" path="res://Assets/Dialogue/Entities/1 - Cone Man/[1] - Cone Man.png" id="2_kyvu4"]
 
 [node name="dialogueBox" type="Node2D" unique_id=81260716]
 script = ExtResource("1_hygrc")
 
 [node name="dialogueBox" type="Sprite2D" parent="." unique_id=1034987758]
-position = Vector2(3.0000305, 1.5258789e-05)
-scale = Vector2(0.33935192, 0.3393519)
-texture = ExtResource("2_l8qb8")
+position = Vector2(1.3332405, -7.4999733)
+scale = Vector2(0.63281256, 0.63281256)
+texture = ExtResource("2_kyvu4")
 
 [node name="nextDialogue" type="Button" parent="." unique_id=247576464]
 self_modulate = Color(1, 1, 1, 0)
