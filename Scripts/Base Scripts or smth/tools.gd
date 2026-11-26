@@ -3,7 +3,7 @@ class_name toolBasic extends Area2D
 var touching = false
 var off = Vector2(0,0)
 
-@export var min_pos = Vector2(192, 109)
+@export var min_pos = Vector2(192, 66)
 @export var max_pos = Vector2(463, 331)
 
 # Called when the node enters the scene tree for the first time.

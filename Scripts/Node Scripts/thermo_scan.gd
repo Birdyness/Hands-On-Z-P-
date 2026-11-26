@@ -4,8 +4,12 @@ extends toolBasic
 @onready var trait_check: Label = $traitCheck
 @onready var entity: Entities = $"../entity"
 @onready var timer: Timer = $Timer
+@onready var thermoScanner: Sprite2D = $ThermoScan
 
-signal entityDetected(entity)
+const NO_INDICATOR = preload("res://Assets/ThermoScan/1 - No Indicator.png")
+const NORMAL = preload("res://Assets/ThermoScan/2 - Normal.png")
+const COLD_BLOODED = preload("res://Assets/ThermoScan/3 - Cold-Blooded.png")
+const HOT_BLOODED = preload("res://Assets/ThermoScan/4 - Hot-Blooded.png")
 
 var thermoLV
 var moving = false
@@ -26,7 +30,8 @@ func _process(delta: float) -> void:
 
 	if thermo_lever.value != 100:
 		global_position = Vector2(270, -190 + (380 * thermo_lever.value / 100))
-
+	
+			
 func interact() -> void:
 	if thermo_lever.value == 100:
 		thermo_scan()
@@ -39,16 +44,23 @@ func thermo_scan():
 	await timer.timeout
 
 	if thermoLV == 0:
-		trait_check.text = "Normal"
+		thermoScanner.texture = NORMAL
 	elif thermoLV == 1:
-		trait_check.text = "Cold-Blooded"
+		thermoScanner.texture = COLD_BLOODED
 	else:
-		trait_check.text = "Hot-Blooded"
+		thermoScanner.texture = HOT_BLOODED
 
-func _on_area_entered(area: Area2D) -> void:
-	if area.name == "mColl":
-		entityDetected.emit(area.get_parent())
-		scanned(area.get_parent())
 		
-func scanned(entity):
-	print("DETECTED ", entity.name)
+func _on_scan_area_area_entered(_area: Area2D) -> void:
+	thermoLV = entity.entity_data[entity.entity]["thermo"]
+	if thermoLV == 0:
+		thermoScanner.texture = NORMAL
+	elif thermoLV == 1:
+		thermoScanner.texture = COLD_BLOODED
+	else:
+		thermoScanner.texture = HOT_BLOODED
+
+
+
+func _on_scan_area_area_exited(area: Area2D) -> void:
+	thermoScanner.texture = NO_INDICATOR

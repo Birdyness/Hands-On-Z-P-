@@ -145,11 +145,8 @@ func randomizeEntity(number: Array):
 	var chosen = get_node("model_" + str(number.pick_random()))
 
 	for child in get_children():
-		if child is Area2D:
+		if child is Sprite2D:
 			child.visible = child == chosen
-			child.monitoring = child == chosen
-			child.monitorable = child == chosen
-			child.get_node("mColl").disabled = child != chosen
 			
 	return chosen
 	
