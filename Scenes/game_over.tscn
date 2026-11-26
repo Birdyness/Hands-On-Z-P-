@@ -38,6 +38,7 @@ scale = Vector2(0.30210343, 0.3040537)
 texture = ExtResource("5_3817r")
 
 [node name="BlackScreen" type="Sprite2D" parent="." unique_id=2046634895]
+visible = false
 position = Vector2(580.889, 328.75003)
 scale = Vector2(0.60231483, 0.6023148)
 texture = ExtResource("6_mitgx")

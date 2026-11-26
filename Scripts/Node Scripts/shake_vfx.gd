@@ -19,24 +19,13 @@ var shake_time_speed: float = 20.0
 var noise = FastNoiseLite.new()
 
 func _ready() -> void:
+	$stopBlock.mouse_filter = Control.MOUSE_FILTER_STOP
+	game_manager.dayEnd.connect(dayLabel)
 	day_label.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 	blood_vfx.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 	black_screen.self_modulate = Color(1.0, 1.0, 1.0)
+	dayIntro(days)
 	
-	await waits(1)
-	boom.play()
-	await waits(0.2)
-	day_label.self_modulate = Color(1.0, 1.0, 1.0, 0.6)
-	await waits(1)
-	if tween:
-			tween.kill()
-	tween = create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(day_label, "self_modulate", Color(1.0, 1.0, 1.0, 0), 3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
-	tween = create_tween()
-	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0) , 3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
-
-	game_manager.dayEnd.connect(dayLabel)
 func _physics_process(delta: float) -> void:
 	if active_shake_time > 0:
 		shake_time += delta*shake_time_speed
@@ -85,5 +74,28 @@ func screen_shake_blood(intensity: int, time: float):
 	
 	
 func dayLabel(dayEnd: int):
-	$DayLabel.text = "DAY-" + str(days)
-	
+	$stopBlock.mouse_filter = Control.MOUSE_FILTER_STOP
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0, 1.0), 1.5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	await tween.finished
+	dayIntro(dayEnd)
+func dayIntro(dayi: int):
+	await waits(1)
+	showDay(dayi)
+	await waits(1.2)
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	await waits(3)
+	$stopBlock.mouse_filter = Control.MOUSE_FILTER_IGNORE
+func showDay(dayi: int):
+	boom.play()
+	await waits(0.2)
+	day_label.text = "DAY-" + str(dayi)
+	day_label.self_modulate = Color(1.0, 1.0, 1.0, 0.6)
+	await waits(1)
+	var labelTween = create_tween()
+	labelTween.tween_property(day_label, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)

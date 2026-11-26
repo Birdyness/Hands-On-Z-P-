@@ -5,6 +5,7 @@ extends Node2D
 @onready var disp: Node2D = $"../dispButton"
 @onready var shake_vfx: Camera2D = $"../shakeVFX"
 @onready var pot: Node2D = $"../Pot"
+@onready var game_manager: Node2D = $".."
 
 var entity_tween: Tween
 var flower_tween: Tween
@@ -18,7 +19,8 @@ func _ready() -> void:
 	disp.delay.connect(entityShutter)
 	pot.shutterIt.connect(flowerShutter)
 	pot.shutC.connect(gTimeSet)
-	# add more when making days, like for disable or start of day
+	setFlowerShutter(game_manager.day)
+	game_manager.dayEnd.connect(setFlowerShutter)
 	
 func entityShutter():
 	if entity_tween:
@@ -43,3 +45,9 @@ func flowerShutter():
 
 func gTimeSet(gTimeR: int):
 	gTime = gTimeR
+
+func setFlowerShutter(dayi: int):
+	if dayi == 1:
+		flower_shutter.position = Vector2(2211.627, 316.277)
+	else:
+		flower_shutter.position = Vector2(2211.627, 1588.496)   

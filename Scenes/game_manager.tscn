@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvryd0iwhjs2r" path="res://Scenes/disp_button.tscn" id="2_sq00h"]
 [ext_resource type="PackedScene" uid="uid://cof5m02iwcnf" path="res://Scenes/guidebook.tscn" id="4_e6ru4"]
 [ext_resource type="Script" uid="uid://b3owkfx3dyr7t" path="res://Scripts/Node Scripts/buttons.gd" id="5_efn8y"]
+[ext_resource type="Script" uid="uid://dwnegwqwrqpj4" path="res://Scripts/Node Scripts/metal_detector_cos.gd" id="5_qb6lj"]
 [ext_resource type="Texture2D" uid="uid://bhjgtf2pximp2" path="res://Assets/Buttons/ExcButton/ExcButton.png" id="6_i4mau"]
 [ext_resource type="Texture2D" uid="uid://bsjq1w3d2yf3y" path="res://Assets/MetalDetectorCos/Metal Detector Pole.png" id="6_yanw6"]
 [ext_resource type="Texture2D" uid="uid://kmmubn2cq3g4" path="res://Assets/Buttons/ExcButton/ExcButtonDown.png" id="7_b5cn8"]
@@ -75,21 +76,29 @@ texture = ExtResource("1_iu5vk")
 
 [node name="metalDetectorCos" type="Node2D" parent="." unique_id=1006805635]
 position = Vector2(578, 322)
+script = ExtResource("5_qb6lj")
 
 [node name="MetalDetectorPole" type="Sprite2D" parent="metalDetectorCos" unique_id=2000525356]
 position = Vector2(-241.4375, -39)
 scale = Vector2(0.29335642, 0.3070971)
 texture = ExtResource("6_yanw6")
 
-[node name="MetalDetector(interactive)" type="Sprite2D" parent="metalDetectorCos" unique_id=1330221212]
-position = Vector2(-239.8701, 157.00002)
-scale = Vector2(0.293493, 0.29203123)
-texture = ExtResource("7_gdqbl")
-
 [node name="MetalDetectorLights(bgOnly)" type="Sprite2D" parent="metalDetectorCos" unique_id=1440718109]
 position = Vector2(-241, -183)
 scale = Vector2(0.293905, 0.29390493)
 texture = ExtResource("8_a2qng")
+
+[node name="MetalDetector(interactive)" type="Sprite2D" parent="metalDetectorCos" unique_id=1330221212]
+position = Vector2(-239.87, -160)
+scale = Vector2(0.293493, 0.29203123)
+texture = ExtResource("7_gdqbl")
+
+[node name="Fix" type="Button" parent="metalDetectorCos" unique_id=1202424426]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -383.0
+offset_top = -256.0
+offset_right = -96.0
+offset_bottom = 192.0
 
 [node name="entity" type="Node2D" parent="." unique_id=256994302 node_paths=PackedStringArray("sanity")]
 position = Vector2(342, 321)
@@ -162,6 +171,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 position = Vector2(577.6666, 322.375)
 scale = Vector2(0.29965279, 0.29965279)
 texture = ExtResource("1_iu5vk")
+metadata/_edit_lock_ = true
 
 [node name="guidebook" parent="." unique_id=443674428 instance=ExtResource("4_e6ru4")]
 position = Vector2(726, 500)
@@ -207,9 +217,10 @@ position = Vector2(328, 849)
 sanity = NodePath("../SanityBar")
 cEntity = NodePath("../entity")
 
-[node name="metalDetector" parent="." unique_id=515012008 node_paths=PackedStringArray("entity") instance=ExtResource("16_5tjy5")]
-position = Vector2(849, 269)
+[node name="metalDetector" parent="." unique_id=515012008 node_paths=PackedStringArray("entity", "sanity") instance=ExtResource("16_5tjy5")]
+position = Vector2(1284, 283)
 entity = NodePath("../entity")
+sanity = NodePath("../SanityBar")
 
 [node name="Radio" parent="." unique_id=1144881362 instance=ExtResource("13_e6ru4")]
 position = Vector2(1073, 180)
@@ -226,6 +237,13 @@ script = ExtResource("17_v2ahw")
 position = Vector2(2211.627, 1588.496)
 scale = Vector2(0.99428165, 0.9942823)
 texture = ExtResource("18_uj5f7")
+
+[node name="stopper" type="Button" parent="Shutters/FlowerShutter" unique_id=338605003]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -338.9932
+offset_top = -611.51794
+offset_right = 342.3176
+offset_bottom = 644.7522
 
 [node name="EntityShutter" type="Sprite2D" parent="Shutters" unique_id=2132254677]
 position = Vector2(0, -1900)
@@ -287,6 +305,7 @@ script = ExtResource("9_i4mau")
 position = Vector2(578, 322)
 metadata/_edit_lock_ = true
 
+[connection signal="pressed" from="metalDetectorCos/Fix" to="metalDetectorCos" method="_on_fix_pressed"]
 [connection signal="area_entered" from="entity/scan_area" to="Thermo" method="_on_scan_area_area_entered"]
 [connection signal="area_exited" from="entity/scan_area" to="Thermo" method="_on_scan_area_area_exited"]
 [connection signal="button_down" from="Buttons/Execution" to="Buttons" method="_on_execution_button_down"]

@@ -6,6 +6,8 @@ var entity = ""
 @onready var days = game_manager.day
 
 var lastEntity = 0
+var timer: Timer
+var atkCD = false
 
 signal entityDisposed
 # Disposal: Hanging, Radiation, Compression, Flood
@@ -18,7 +20,8 @@ signal entityDisposed
 #SPECIAL:
 #freq = 4, interfere with all radio frequencies
 #metalLV = 4, picks a random number from 1-3
-
+#decay, multipler for sanity loss
+#canAttack, specially for bhael, for attacks
 const entity_data = {
 	"The Cone Man": {
 		"disposal": ["Compression", "Compression", "Compression"],
@@ -107,7 +110,8 @@ const entity_data = {
 		"thermo": 1,
 		"flowerLV": 3,
 		"metalLV": 0,
-		"id": 11
+		"id": 11,
+		"decay": 1.1
 	},
 	"Agarose": {
 		"disposal": ["Hanging", "Radiation", "Compression"],
@@ -115,7 +119,8 @@ const entity_data = {
 		"thermo": 1,
 		"flowerLV": 1,
 		"metalLV": 4,
-		"id": 12
+		"id": 12,
+		"decay": 1.2
 	},
 	"Bhael": {
 		"disposal": ["Hanging", "Flood", "Radiation", "Compression"],
@@ -123,17 +128,25 @@ const entity_data = {
 		"thermo": 2,
 		"flowerLV": 0,
 		"metalLV": 2,
-		"id": 13
+		"id": 13,
+		"decay":1.3,
+		"canAttack": true
 	},
 }
 
 const dailyQuota = {3: [6, 1], 4: [8, 2]}
 
 func _ready() -> void:
-	dayEntities(1)
+	dayEntities(days)
 	get_parent().get_node("dispButton").toak.connect(seqCheck)
 	print(entity)
 	game_manager.dayEnd.connect(dayEntities)
+	timer = Timer.new()
+	timer.wait_time = 5
+	timer.one_shot = true
+	timer.timeout.connect(bhaelAtk)
+	add_child(timer)
+	timer.start()
 	
 func modelRandomizer(modelNo):
 	var number = "res://Assets/Entities (OLD)/model_" + str(modelNo) + ".png"
@@ -197,7 +210,15 @@ func dayEntities(newDay):
 	elif days >= 5:
 		randomizeEntity([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
 
-
+func bhaelAtk():
+	if entity == "Bhael":
+		var chance = randi_range(1,100)
+		if chance <= 30:
+			sanity.change(-20)
+			shake_vfx.screen_shake_blood(15, 0.6)
+			timer.start(8)
+			return
+		timer.start(5)
 #GOD MODE REMEMBER TO REMOVE
 func _input(event):
 	if event is InputEventKey and event.pressed and not event.echo:
