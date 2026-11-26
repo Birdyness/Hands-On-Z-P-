@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://ms7xdyeryiac"]
+
+[ext_resource type="Script" uid="uid://c3j1fvy6elulu" path="res://Scripts/Node Scripts/book_inside.gd" id="1_hrvff"]
+[ext_resource type="Texture2D" uid="uid://dxbve3qpr8c8s" path="res://Assets/Guidebook/Entities/1 - The Cone Man.png" id="1_pfauw"]
+[ext_resource type="Texture2D" uid="uid://djv28nphdv271" path="res://Assets/Guidebook/Entities/- Guidebook_ Entities General Outlook -.png" id="3_maq2d"]
+[ext_resource type="Texture2D" uid="uid://d2fqbaiw0xgjc" path="res://Assets/Guidebook/Entities/Text 1_ Cone Man.png" id="4_3embj"]
+[ext_resource type="Script" uid="uid://q0rej2og6ti8" path="res://Scripts/Node Scripts/entities_buttons.gd" id="4_8jyl8"]
+[ext_resource type="Texture2D" uid="uid://cq0itkq5mu1dr" path="res://Assets/Guidebook/Entities/Text 2_ Aetherax.png" id="5_dp0ur"]
+[ext_resource type="Texture2D" uid="uid://cr63lohf6i0kr" path="res://Assets/Guidebook/Entities/Text 3_ Frogman.png" id="6_dp0ur"]
+[ext_resource type="Texture2D" uid="uid://dmml7b04llud1" path="res://Assets/Guidebook/Entities/Text 4_ Mommy.png" id="7_1ehag"]
+[ext_resource type="Texture2D" uid="uid://dspud6pxeji0" path="res://Assets/Guidebook/Entities/Text 5_ Chupacabra.png" id="8_0t304"]
+[ext_resource type="Texture2D" uid="uid://nhfl15bjwyn" path="res://Assets/Guidebook/Entities/Text 6_ Abella.png" id="9_8jyl8"]
+[ext_resource type="Texture2D" uid="uid://fw0diqnuuhgb" path="res://Assets/Guidebook/Entities/Text 7_ Vampierre.png" id="10_s0t2u"]
+[ext_resource type="Texture2D" uid="uid://dlcw8pd6onuq1" path="res://Assets/Guidebook/Entities/Text 8_ Sylclop.png" id="11_yqlv7"]
+[ext_resource type="Texture2D" uid="uid://b3st1svrnhiya" path="res://Assets/Guidebook/Entities/Text 9_ The Hermit.png" id="12_s5442"]
+[ext_resource type="Texture2D" uid="uid://cx7a3rvi026l0" path="res://Assets/Guidebook/Entities/Text 10_ Gnawing Gnome.png" id="13_ts2yg"]
+[ext_resource type="Texture2D" uid="uid://df8fedq8o5xxr" path="res://Assets/Guidebook/Entities/Text 11_ Maravas.png" id="14_34wls"]
+[ext_resource type="Texture2D" uid="uid://ciy2pn6yt4y8k" path="res://Assets/Guidebook/Entities/Text 12_ Agarose.png" id="15_wh1v7"]
+[ext_resource type="Texture2D" uid="uid://dahri5hy0lsdp" path="res://Assets/Guidebook/Entities/Text 13_ Bhael.png" id="16_rlttu"]
+
+[node name="book_inside" type="Node2D" unique_id=153465476]
+script = ExtResource("1_hrvff")
+
+[node name="Back Button" type="Button" parent="." unique_id=376811790]
+visible = false
+offset_left = -771.0
+offset_top = -466.0
+offset_right = 731.0
+offset_bottom = 465.0
+
+[node name="BookBase" type="Sprite2D" parent="." unique_id=1266651935]
+visible = false
+position = Vector2(-93, 23.132832)
+scale = Vector2(0.5097656, 0.51013285)
+texture = ExtResource("1_pfauw")
+
+[node name="GuidebookEntitiesGeneralOutlook" type="Sprite2D" parent="." unique_id=1172533035]
+position = Vector2(-91, 21)
+scale = Vector2(0.3074074, 0.30740738)
+texture = ExtResource("3_maq2d")
+metadata/_edit_lock_ = true
+
+[node name="Book Cover Button (Does Nothing)" type="Button" parent="." unique_id=139933562]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -421.0
+offset_top = -285.0
+offset_right = 421.0
+offset_bottom = 299.0
+
+[node name="Entities Buttons" type="Node2D" parent="." unique_id=83603361]
+position = Vector2(31, 171)
+script = ExtResource("4_8jyl8")
+
+[node name="Cone Man" type="Sprite2D" parent="Entities Buttons" unique_id=813846797]
+position = Vector2(-122.00001, -150)
+scale = Vector2(0.50965625, 0.50965625)
+texture = ExtResource("4_3embj")
+
+[node name="Aetherax" type="Sprite2D" parent="Entities Buttons" unique_id=2071130299]
+position = Vector2(-123.000015, -149)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("5_dp0ur")
+
+[node name="Frogman" type="Sprite2D" parent="Entities Buttons" unique_id=1323509831]
+position = Vector2(-123, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("6_dp0ur")
+
+[node name="Mommy" type="Sprite2D" parent="Entities Buttons" unique_id=2106777109]
+position = Vector2(-123, -150.00002)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("7_1ehag")
+
+[node name="Chupacabra" type="Sprite2D" parent="Entities Buttons" unique_id=755617188]
+position = Vector2(-123.000015, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("8_0t304")
+
+[node name="Abella" type="Sprite2D" parent="Entities Buttons" unique_id=409909735]
+position = Vector2(-123, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("9_8jyl8")
+
+[node name="Vampierre" type="Sprite2D" parent="Entities Buttons" unique_id=1891689610]
+position = Vector2(-122, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("10_s0t2u")
+
+[node name="Sylclop" type="Sprite2D" parent="Entities Buttons" unique_id=1515432255]
+position = Vector2(-123, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("11_yqlv7")
+
+[node name="The Hermit" type="Sprite2D" parent="Entities Buttons" unique_id=1184249676]
+position = Vector2(-122, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("12_s5442")
+
+[node name="Gnawing Gnome" type="Sprite2D" parent="Entities Buttons" unique_id=1192259696]
+position = Vector2(-123, -150)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("13_ts2yg")
+
+[node name="Maravas" type="Sprite2D" parent="Entities Buttons" unique_id=677891915]
+position = Vector2(-122, -151)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("14_34wls")
+
+[node name="Agarose" type="Sprite2D" parent="Entities Buttons" unique_id=1549325897]
+position = Vector2(-123, -151)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("15_wh1v7")
+
+[node name="Bhael" type="Sprite2D" parent="Entities Buttons" unique_id=2077006413]
+position = Vector2(-123, -151)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("16_rlttu")
