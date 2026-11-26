@@ -8,6 +8,8 @@ var tween: Tween
 var stopped = true
 
 func _ready() -> void:
+	
+	
 	bScreen.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 	menuBGM.volume_db = -80.0 
 	menuBGM.play()

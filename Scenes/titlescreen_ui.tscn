@@ -2,6 +2,22 @@
 
 [ext_resource type="Script" uid="uid://wtm1m2s506xo" path="res://Scripts/Base Scripts or smth/titlescreen_ui.gd" id="1_jvm4r"]
 [ext_resource type="PackedScene" uid="uid://cuysvj2fkvigo" path="res://Scenes/workspace.tscn" id="2_x0xyd"]
+[ext_resource type="Texture2D" uid="uid://dan2y0jg25jku" path="res://Assets/GUI/Title Screen/Text 1_ Main Title.png" id="3_bfxbw"]
+[ext_resource type="Texture2D" uid="uid://bq1ieslvqcq1f" path="res://Assets/Screen Transition/Black Screen.png" id="3_uvlq5"]
+[ext_resource type="AudioStream" uid="uid://c3lwbhlsu7bqk" path="res://Assets/Audido/BGM/MenuBGM.MP3" id="4_3yc6f"]
+[ext_resource type="Texture2D" uid="uid://dn5fy17mk5qs7" path="res://Assets/GUI/Title Screen/Text 2_ Start.png" id="4_jls03"]
+[ext_resource type="Texture2D" uid="uid://cvlp46jggfjch" path="res://Assets/GUI/Title Screen/Text 4_ Exit.png" id="5_pwdvn"]
+[ext_resource type="Script" uid="uid://c0p0ck1ib7ipi" path="res://Scripts/Base Scripts or smth/button.gd" id="6_jls03"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bfxbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jls03"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwdvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4u7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_csdki"]
 
 [node name="Control" type="Control" unique_id=743250380]
 layout_mode = 3
@@ -13,34 +29,71 @@ grow_vertical = 2
 script = ExtResource("1_jvm4r")
 game_scene = ExtResource("2_x0xyd")
 
-[node name="Label" type="Label" parent="." unique_id=2084518425]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 51.0
-offset_right = 169.0
-offset_bottom = 74.0
-scale = Vector2(3.76, 3.76)
-text = "ZED: Zetarium Exorcism Department"
+[node name="Title" type="Sprite2D" parent="." unique_id=231611087]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_bfxbw")
 
-[node name="StartButton" type="Button" parent="." unique_id=2011346747]
-layout_mode = 0
-offset_left = 73.0
-offset_top = 429.00003
-offset_right = 119.0
-offset_bottom = 460.00003
-scale = Vector2(1.8800006, 1.8800006)
-text = "Start
-"
+[node name="StartSprite" type="Sprite2D" parent="." unique_id=1390260219]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_jls03")
 
-[node name="QuitButton" type="Button" parent="." unique_id=487418190]
+[node name="ExitSprite" type="Sprite2D" parent="." unique_id=1844381952]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_pwdvn")
+
+[node name="StartButton" type="Button" parent="." unique_id=2011346747 node_paths=PackedStringArray("buttonSprite")]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 511.00003
-offset_right = 115.0
-offset_bottom = 542.0
+offset_left = 450.99997
+offset_top = 453.99997
+offset_right = 585.0425
+offset_bottom = 492.82974
 scale = Vector2(1.8800006, 1.8800006)
-text = "Quit
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bfxbw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jls03")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pwdvn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s4u7d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_csdki")
+script = ExtResource("6_jls03")
+buttonSprite = NodePath("../StartSprite")
+btnTweenDuration = 0.15
+
+[node name="QuitButton" type="Button" parent="." unique_id=487418190 node_paths=PackedStringArray("buttonSprite")]
+layout_mode = 0
+offset_left = 537.00006
+offset_top = 550.0
+offset_right = 579.00006
+offset_bottom = 581.0
+scale = Vector2(1.8800006, 1.8800006)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bfxbw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jls03")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pwdvn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s4u7d")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_csdki")
+text = "
 "
+script = ExtResource("6_jls03")
+buttonSprite = NodePath("../ExitSprite")
+btnTweenDuration = 0.15
+btnTweenMagnitude = 0.002
+
+[node name="BlackScreen" type="TextureRect" parent="." unique_id=2026457220]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -6.1035156e-05
+offset_top = -6.1035156e-05
+offset_right = 1153.7778
+offset_bottom = 648.99994
+mouse_filter = 2
+texture = ExtResource("3_uvlq5")
+expand_mode = 1
+
+[node name="MenuBGM" type="AudioStreamPlayer2D" parent="." unique_id=64583173]
+position = Vector2(-6.1035156e-05, -6.1035156e-05)
+scale = Vector2(1.0000001, 1.0000001)
+stream = ExtResource("4_3yc6f")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
