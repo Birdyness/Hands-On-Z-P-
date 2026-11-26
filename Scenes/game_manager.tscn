@@ -173,9 +173,6 @@ scale = Vector2(0.29965279, 0.29965279)
 texture = ExtResource("1_iu5vk")
 metadata/_edit_lock_ = true
 
-[node name="guidebook" parent="." unique_id=443674428 instance=ExtResource("4_e6ru4")]
-position = Vector2(726, 500)
-
 [node name="Buttons" type="Control" parent="." unique_id=845528170]
 layout_mode = 3
 anchors_preset = 0
@@ -257,6 +254,9 @@ texture = ExtResource("22_mivtr")
 
 [node name="dispButton" parent="." unique_id=1839645826 instance=ExtResource("2_sq00h")]
 position = Vector2(-668, 515)
+
+[node name="guidebook" parent="." unique_id=443674428 instance=ExtResource("4_e6ru4")]
+position = Vector2(727, 490)
 
 [node name="Cover" type="Sprite2D" parent="." unique_id=420841881]
 position = Vector2(725.1046, 376.38345)

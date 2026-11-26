@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcvqdc664a7jv" path="res://Scripts/Node Scripts/guidebook.gd" id="1_15esn"]
 [ext_resource type="Texture2D" uid="uid://6hkv375maw3u" path="res://Assets/Workdesk/Guidebook.png" id="1_m5omo"]
+[ext_resource type="Texture2D" uid="uid://dxbve3qpr8c8s" path="res://Assets/Guidebook/Entities/1 - The Cone Man.png" id="3_y564n"]
 
 [node name="guidebook" type="Node2D" unique_id=443674428]
 script = ExtResource("1_15esn")
@@ -17,6 +18,11 @@ offset_left = -27.0
 offset_top = -114.0
 offset_right = 29.0
 offset_bottom = 116.0
+
+[node name="1TheConeMan" type="Sprite2D" parent="." unique_id=1625930539]
+position = Vector2(-152.00002, -167)
+scale = Vector2(0.48475, 0.48475)
+texture = ExtResource("3_y564n")
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
