@@ -303,9 +303,11 @@ script = ExtResource("9_i4mau")
 [node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
 
 [node name="book_inside" parent="." unique_id=153465476 instance=ExtResource("41_g1y4a")]
-position = Vector2(578, 312)
+visible = false
+position = Vector2(663, 277)
 
 [node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
+visible = false
 position = Vector2(578, 322)
 metadata/_edit_lock_ = true
 

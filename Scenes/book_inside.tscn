@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3j1fvy6elulu" path="res://Scripts/Node Scripts/book_inside.gd" id="1_hrvff"]
 [ext_resource type="Texture2D" uid="uid://dxbve3qpr8c8s" path="res://Assets/Guidebook/Entities/1 - The Cone Man.png" id="1_pfauw"]
-[ext_resource type="Texture2D" uid="uid://djv28nphdv271" path="res://Assets/Guidebook/Entities/- Guidebook_ Entities General Outlook -.png" id="3_maq2d"]
 [ext_resource type="Texture2D" uid="uid://d2fqbaiw0xgjc" path="res://Assets/Guidebook/Entities/Text 1_ Cone Man.png" id="4_3embj"]
-[ext_resource type="Script" uid="uid://q0rej2og6ti8" path="res://Scripts/Node Scripts/entities_buttons.gd" id="4_8jyl8"]
 [ext_resource type="Texture2D" uid="uid://cq0itkq5mu1dr" path="res://Assets/Guidebook/Entities/Text 2_ Aetherax.png" id="5_dp0ur"]
 [ext_resource type="Texture2D" uid="uid://cr63lohf6i0kr" path="res://Assets/Guidebook/Entities/Text 3_ Frogman.png" id="6_dp0ur"]
 [ext_resource type="Texture2D" uid="uid://dmml7b04llud1" path="res://Assets/Guidebook/Entities/Text 4_ Mommy.png" id="7_1ehag"]
@@ -17,102 +15,464 @@
 [ext_resource type="Texture2D" uid="uid://df8fedq8o5xxr" path="res://Assets/Guidebook/Entities/Text 11_ Maravas.png" id="14_34wls"]
 [ext_resource type="Texture2D" uid="uid://ciy2pn6yt4y8k" path="res://Assets/Guidebook/Entities/Text 12_ Agarose.png" id="15_wh1v7"]
 [ext_resource type="Texture2D" uid="uid://dahri5hy0lsdp" path="res://Assets/Guidebook/Entities/Text 13_ Bhael.png" id="16_rlttu"]
+[ext_resource type="Texture2D" uid="uid://bgt0lrf30v7rn" path="res://Assets/Guidebook/Tools/Text 1_ Analog Radio.png" id="17_wh1v7"]
+[ext_resource type="Texture2D" uid="uid://copr1ulpyh5or" path="res://Assets/Guidebook/Tools/Text 2_ Temperature Scanner.png" id="18_rlttu"]
+[ext_resource type="Texture2D" uid="uid://crbn2uiotsp3j" path="res://Assets/Guidebook/Tools/Text 3_ Plantation.png" id="19_v01eq"]
+[ext_resource type="Texture2D" uid="uid://5ldcad66x07u" path="res://Assets/Guidebook/Tools/Text 4_ Metal Detector.png" id="20_lajko"]
+[ext_resource type="Texture2D" uid="uid://d4lndyfchilia" path="res://Assets/Guidebook/Tools/Text 5_ Execution Panel.png" id="21_f51gb"]
+[ext_resource type="Texture2D" uid="uid://cymkuxlr4hrk3" path="res://Assets/Guidebook/Tools/Text 6_ SwitchPage.png" id="21_v01eq"]
+[ext_resource type="Texture2D" uid="uid://c7hei7cv31yv7" path="res://Assets/Guidebook/Traits/Text 1_ In-Band Interference.png" id="24_1otgt"]
+[ext_resource type="Texture2D" uid="uid://d1c5p6kmuuarm" path="res://Assets/Guidebook/Traits/Text 2_ Blood Temperature.png" id="25_uvmxe"]
+[ext_resource type="Texture2D" uid="uid://n3hfxcppd0e4" path="res://Assets/Guidebook/Traits/Text 3_ Plant Growth.png" id="26_tlkl4"]
+[ext_resource type="Texture2D" uid="uid://cxx1oyhsj6ig" path="res://Assets/Guidebook/Traits/Text 4_ Metal Traits.png" id="27_iaka3"]
 
 [node name="book_inside" type="Node2D" unique_id=153465476]
 script = ExtResource("1_hrvff")
 
 [node name="Back Button" type="Button" parent="." unique_id=376811790]
-visible = false
-offset_left = -771.0
-offset_top = -466.0
-offset_right = 731.0
-offset_bottom = 465.0
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -735.82214
+offset_top = -348.0
+offset_right = 534.0
+offset_bottom = 434.0
 
 [node name="BookBase" type="Sprite2D" parent="." unique_id=1266651935]
-visible = false
 position = Vector2(-93, 23.132832)
 scale = Vector2(0.5097656, 0.51013285)
 texture = ExtResource("1_pfauw")
 
-[node name="GuidebookEntitiesGeneralOutlook" type="Sprite2D" parent="." unique_id=1172533035]
-position = Vector2(-91, 21)
-scale = Vector2(0.3074074, 0.30740738)
-texture = ExtResource("3_maq2d")
-metadata/_edit_lock_ = true
-
 [node name="Book Cover Button (Does Nothing)" type="Button" parent="." unique_id=139933562]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -421.0
-offset_top = -285.0
-offset_right = 421.0
-offset_bottom = 299.0
+offset_left = -475.0
+offset_top = -243.0
+offset_right = 313.0
+offset_bottom = 301.0
 
-[node name="Entities Buttons" type="Node2D" parent="." unique_id=83603361]
+[node name="Tabs" type="Control" parent="." unique_id=1399799238]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tools" type="Button" parent="Tabs" unique_id=523233860]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 271.0
+offset_top = -139.0
+offset_right = 357.0
+offset_bottom = -92.0
+
+[node name="Traits" type="Button" parent="Tabs" unique_id=149772975]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -536.0
+offset_top = 211.0
+offset_right = -463.0
+offset_bottom = 255.0
+
+[node name="Entities" type="Button" parent="Tabs" unique_id=804352207]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 268.0
+offset_top = -203.0
+offset_right = 357.0
+offset_bottom = -159.0
+
+[node name="Entities Labels" type="Node2D" parent="." unique_id=83603361]
 position = Vector2(31, 171)
-script = ExtResource("4_8jyl8")
 
-[node name="Cone Man" type="Sprite2D" parent="Entities Buttons" unique_id=813846797]
+[node name="Cone Man" type="Sprite2D" parent="Entities Labels" unique_id=813846797]
 position = Vector2(-122.00001, -150)
 scale = Vector2(0.50965625, 0.50965625)
 texture = ExtResource("4_3embj")
 
-[node name="Aetherax" type="Sprite2D" parent="Entities Buttons" unique_id=2071130299]
+[node name="Aetherax" type="Sprite2D" parent="Entities Labels" unique_id=2071130299]
 position = Vector2(-123.000015, -149)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("5_dp0ur")
 
-[node name="Frogman" type="Sprite2D" parent="Entities Buttons" unique_id=1323509831]
+[node name="Frogman" type="Sprite2D" parent="Entities Labels" unique_id=1323509831]
 position = Vector2(-123, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("6_dp0ur")
 
-[node name="Mommy" type="Sprite2D" parent="Entities Buttons" unique_id=2106777109]
+[node name="Mommy" type="Sprite2D" parent="Entities Labels" unique_id=2106777109]
 position = Vector2(-123, -150.00002)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("7_1ehag")
 
-[node name="Chupacabra" type="Sprite2D" parent="Entities Buttons" unique_id=755617188]
+[node name="Chupacabra" type="Sprite2D" parent="Entities Labels" unique_id=755617188]
 position = Vector2(-123.000015, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("8_0t304")
 
-[node name="Abella" type="Sprite2D" parent="Entities Buttons" unique_id=409909735]
+[node name="Abella" type="Sprite2D" parent="Entities Labels" unique_id=409909735]
 position = Vector2(-123, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("9_8jyl8")
 
-[node name="Vampierre" type="Sprite2D" parent="Entities Buttons" unique_id=1891689610]
+[node name="Vampierre" type="Sprite2D" parent="Entities Labels" unique_id=1891689610]
 position = Vector2(-122, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("10_s0t2u")
 
-[node name="Sylclop" type="Sprite2D" parent="Entities Buttons" unique_id=1515432255]
+[node name="Sylclop" type="Sprite2D" parent="Entities Labels" unique_id=1515432255]
 position = Vector2(-123, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("11_yqlv7")
 
-[node name="The Hermit" type="Sprite2D" parent="Entities Buttons" unique_id=1184249676]
+[node name="The Hermit" type="Sprite2D" parent="Entities Labels" unique_id=1184249676]
 position = Vector2(-122, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("12_s5442")
 
-[node name="Gnawing Gnome" type="Sprite2D" parent="Entities Buttons" unique_id=1192259696]
+[node name="Gnawing Gnome" type="Sprite2D" parent="Entities Labels" unique_id=1192259696]
 position = Vector2(-123, -150)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("13_ts2yg")
 
-[node name="Maravas" type="Sprite2D" parent="Entities Buttons" unique_id=677891915]
+[node name="Maravas" type="Sprite2D" parent="Entities Labels" unique_id=677891915]
 position = Vector2(-122, -151)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("14_34wls")
 
-[node name="Agarose" type="Sprite2D" parent="Entities Buttons" unique_id=1549325897]
+[node name="Agarose" type="Sprite2D" parent="Entities Labels" unique_id=1549325897]
 position = Vector2(-123, -151)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("15_wh1v7")
 
-[node name="Bhael" type="Sprite2D" parent="Entities Buttons" unique_id=2077006413]
+[node name="Bhael" type="Sprite2D" parent="Entities Labels" unique_id=2077006413]
 position = Vector2(-123, -151)
 scale = Vector2(0.51, 0.51)
 texture = ExtResource("16_rlttu")
+
+[node name="Entity Buttons" type="Control" parent="." unique_id=238781718]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 65.0
+offset_top = 32.0
+offset_right = 105.0
+offset_bottom = 72.0
+
+[node name="Cone Man" type="Button" parent="Entity Buttons" unique_id=1014530323]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -123.0
+offset_top = -137.0
+offset_right = -3.0
+offset_bottom = -116.0
+
+[node name="Frogman" type="Button" parent="Entity Buttons" unique_id=1926135008]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -117.0
+offset_top = -88.0
+offset_right = -7.0
+offset_bottom = -67.0
+
+[node name="Chupacabra" type="Button" parent="Entity Buttons" unique_id=1691922167]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -133.0
+offset_top = -40.0
+offset_right = 12.0
+offset_bottom = -19.0
+
+[node name="Vampierre" type="Button" parent="Entity Buttons" unique_id=769084264]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -125.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = 30.0
+
+[node name="The Hermit" type="Button" parent="Entity Buttons" unique_id=1141623848]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -107.0
+offset_top = 58.0
+offset_right = -20.0
+offset_bottom = 111.0
+
+[node name="Maravas" type="Button" parent="Entity Buttons" unique_id=601702094]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -113.0
+offset_top = 134.0
+offset_right = -13.0
+offset_bottom = 159.0
+
+[node name="Bhael" type="Button" parent="Entity Buttons" unique_id=1182910636]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -11.0
+offset_top = 183.0
+offset_right = 61.0
+offset_bottom = 209.0
+
+[node name="Aetherax" type="Button" parent="Entity Buttons" unique_id=164210365]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 47.0
+offset_top = -139.0
+offset_right = 163.0
+offset_bottom = -113.0
+
+[node name="Mommy" type="Button" parent="Entity Buttons" unique_id=2073682179]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = -91.0
+offset_right = 154.0
+offset_bottom = -65.0
+
+[node name="Abella" type="Button" parent="Entity Buttons" unique_id=865013204]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 68.0
+offset_top = -41.0
+offset_right = 150.0
+offset_bottom = -15.0
+
+[node name="Sylclop" type="Button" parent="Entity Buttons" unique_id=930520938]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 57.0
+offset_top = 7.0
+offset_right = 155.0
+offset_bottom = 33.0
+
+[node name="Gnawing Gnome" type="Button" parent="Entity Buttons" unique_id=303511428]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 58.0
+offset_right = 160.0
+offset_bottom = 112.0
+
+[node name="Agarose" type="Button" parent="Entity Buttons" unique_id=213900945]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 52.0
+offset_top = 136.0
+offset_right = 157.0
+offset_bottom = 158.0
+
+[node name="Tools Labels" type="Node2D" parent="." unique_id=637605450]
+
+[node name="Analog" type="Sprite2D" parent="Tools Labels" unique_id=77907886]
+position = Vector2(-93, 24)
+scale = Vector2(0.51197857, 0.51197857)
+texture = ExtResource("17_wh1v7")
+
+[node name="TemperatureScanner" type="Sprite2D" parent="Tools Labels" unique_id=1330671467]
+position = Vector2(-92, 24)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("18_rlttu")
+
+[node name="Plantation" type="Sprite2D" parent="Tools Labels" unique_id=133438729]
+position = Vector2(-93.00001, 24)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("19_v01eq")
+
+[node name="MetalDetector" type="Sprite2D" parent="Tools Labels" unique_id=400623718]
+position = Vector2(-93.00001, 24.000002)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("20_lajko")
+
+[node name="ExecutionPanel" type="Sprite2D" parent="Tools Labels" unique_id=1967801953]
+position = Vector2(-92.00001, 23)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("21_f51gb")
+
+[node name="SwitchPage" type="Sprite2D" parent="Tools Labels" unique_id=18543565]
+position = Vector2(-278, 269)
+texture = ExtResource("21_v01eq")
+
+[node name="Tools Buttons" type="Control" parent="." unique_id=2004604876]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Analog Radio" type="Button" parent="Tools Buttons" unique_id=86890857]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 7.0
+offset_top = -29.0
+offset_right = 176.0
+offset_bottom = -7.0
+
+[node name="Temperature Scanner" type="Button" parent="Tools Buttons" unique_id=1859001222]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -43.0
+offset_top = 17.0
+offset_right = 225.0
+offset_bottom = 39.0
+
+[node name="Plantation" type="Button" parent="Tools Buttons" unique_id=1474495735]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 66.0
+offset_right = 158.0
+offset_bottom = 88.0
+
+[node name="Metal Detector" type="Button" parent="Tools Buttons" unique_id=1065008143]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -7.0
+offset_top = 115.0
+offset_right = 186.0
+offset_bottom = 137.0
+
+[node name="Execution Panel" type="Button" parent="Tools Buttons" unique_id=2015068183]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -10.0
+offset_top = 162.0
+offset_right = 188.0
+offset_bottom = 184.0
+
+[node name="Ex3cution" type="Button" parent="Tools Buttons" unique_id=2040839604]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -299.0
+offset_top = 259.0
+offset_right = -255.0
+offset_bottom = 279.0
+
+[node name="Traits Labels" type="Node2D" parent="." unique_id=1366310899]
+
+[node name="In-Band Interference" type="Sprite2D" parent="Traits Labels" unique_id=1482002629]
+position = Vector2(-91, 23.000002)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("24_1otgt")
+
+[node name="Blood Temperature" type="Sprite2D" parent="Traits Labels" unique_id=1646819127]
+position = Vector2(-91, 23.000002)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("25_uvmxe")
+
+[node name="Plant Growth" type="Sprite2D" parent="Traits Labels" unique_id=1437718977]
+position = Vector2(-91, 23)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("26_tlkl4")
+
+[node name="Metal Traits" type="Sprite2D" parent="Traits Labels" unique_id=1205228889]
+position = Vector2(-91.000015, 24)
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("27_iaka3")
+
+[node name="Traits Buttons" type="Control" parent="." unique_id=203862476]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="In-Band Interference" type="Button" parent="Traits Buttons" unique_id=58433816]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -37.0
+offset_top = -3.0
+offset_right = 221.0
+offset_bottom = 20.0
+
+[node name="Blood Temperature" type="Button" parent="Traits Buttons" unique_id=1405110905]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -19.0
+offset_top = 42.0
+offset_right = 205.0
+offset_bottom = 65.0
+
+[node name="Plant Growth" type="Button" parent="Traits Buttons" unique_id=101071118]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 86.0
+offset_right = 178.0
+offset_bottom = 109.0
+
+[node name="Metal Traits" type="Button" parent="Traits Buttons" unique_id=1760197476]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 17.0
+offset_top = 131.0
+offset_right = 167.0
+offset_bottom = 154.0
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Tabs/Tools" to="." method="_on_tools_pressed"]
+[connection signal="pressed" from="Tabs/Traits" to="." method="_on_traits_pressed"]
+[connection signal="pressed" from="Tabs/Entities" to="." method="_on_entities_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Cone Man" to="." method="_on_cone_man_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Cone Man" to="." method="_on_cone_man_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Cone Man" to="." method="_on_cone_man_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Frogman" to="." method="_on_frogman_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Frogman" to="." method="_on_frogman_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Frogman" to="." method="_on_frogman_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Chupacabra" to="." method="_on_chupacabra_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Chupacabra" to="." method="_on_chupacabra_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Chupacabra" to="." method="_on_chupacabra_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Vampierre" to="." method="_on_vampierre_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Vampierre" to="." method="_on_vampierre_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Vampierre" to="." method="_on_vampierre_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/The Hermit" to="." method="_on_the_hermit_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/The Hermit" to="." method="_on_the_hermit_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/The Hermit" to="." method="_on_the_hermit_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Maravas" to="." method="_on_maravas_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Maravas" to="." method="_on_maravas_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Maravas" to="." method="_on_maravas_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Bhael" to="." method="_on_bhael_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Bhael" to="." method="_on_bhael_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Bhael" to="." method="_on_bhael_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Aetherax" to="." method="_on_aetherax_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Aetherax" to="." method="_on_aetherax_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Aetherax" to="." method="_on_aetherax_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Mommy" to="." method="_on_mommy_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Mommy" to="." method="_on_mommy_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Mommy" to="." method="_on_mommy_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Abella" to="." method="_on_abella_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Abella" to="." method="_on_abella_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Abella" to="." method="_on_abella_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Sylclop" to="." method="_on_sylclop_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Sylclop" to="." method="_on_sylclop_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Sylclop" to="." method="_on_sylclop_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Gnawing Gnome" to="." method="_on_gnawing_gnome_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Gnawing Gnome" to="." method="_on_gnawing_gnome_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Gnawing Gnome" to="." method="_on_gnawing_gnome_pressed"]
+[connection signal="mouse_entered" from="Entity Buttons/Agarose" to="." method="_on_agarose_mouse_entered"]
+[connection signal="mouse_exited" from="Entity Buttons/Agarose" to="." method="_on_agarose_mouse_exited"]
+[connection signal="pressed" from="Entity Buttons/Agarose" to="." method="_on_agarose_pressed"]
+[connection signal="mouse_entered" from="Tools Buttons/Analog Radio" to="." method="_on_analog_radio_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Buttons/Analog Radio" to="." method="_on_analog_radio_mouse_exited"]
+[connection signal="pressed" from="Tools Buttons/Analog Radio" to="." method="_on_analog_radio_pressed"]
+[connection signal="mouse_entered" from="Tools Buttons/Temperature Scanner" to="." method="_on_temperature_scanner_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Buttons/Temperature Scanner" to="." method="_on_temperature_scanner_mouse_exited"]
+[connection signal="pressed" from="Tools Buttons/Temperature Scanner" to="." method="_on_temperature_scanner_pressed"]
+[connection signal="mouse_entered" from="Tools Buttons/Plantation" to="." method="_on_plantation_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Buttons/Plantation" to="." method="_on_plantation_mouse_exited"]
+[connection signal="pressed" from="Tools Buttons/Plantation" to="." method="_on_plantation_pressed"]
+[connection signal="mouse_entered" from="Tools Buttons/Metal Detector" to="." method="_on_metal_detector_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Buttons/Metal Detector" to="." method="_on_metal_detector_mouse_exited"]
+[connection signal="pressed" from="Tools Buttons/Metal Detector" to="." method="_on_metal_detector_pressed"]
+[connection signal="mouse_entered" from="Tools Buttons/Execution Panel" to="." method="_on_execution_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Buttons/Execution Panel" to="." method="_on_execution_panel_mouse_exited"]
+[connection signal="pressed" from="Tools Buttons/Execution Panel" to="." method="_on_execution_panel_pressed"]
+[connection signal="mouse_entered" from="Tools Buttons/Ex3cution" to="." method="_on_ex_3_cution_mouse_entered"]
+[connection signal="mouse_exited" from="Tools Buttons/Ex3cution" to="." method="_on_ex_3_cution_mouse_exited"]
+[connection signal="pressed" from="Tools Buttons/Ex3cution" to="." method="_on_ex_3_cution_pressed"]
+[connection signal="mouse_entered" from="Traits Buttons/In-Band Interference" to="." method="_on_in_band_interference_mouse_entered"]
+[connection signal="mouse_exited" from="Traits Buttons/In-Band Interference" to="." method="_on_in_band_interference_mouse_exited"]
+[connection signal="pressed" from="Traits Buttons/In-Band Interference" to="." method="_on_in_band_interference_pressed"]
+[connection signal="mouse_entered" from="Traits Buttons/Blood Temperature" to="." method="_on_blood_temperature_mouse_entered"]
+[connection signal="mouse_exited" from="Traits Buttons/Blood Temperature" to="." method="_on_blood_temperature_mouse_exited"]
+[connection signal="pressed" from="Traits Buttons/Blood Temperature" to="." method="_on_blood_temperature_pressed"]
+[connection signal="mouse_entered" from="Traits Buttons/Plant Growth" to="." method="_on_plant_growth_mouse_entered"]
+[connection signal="mouse_exited" from="Traits Buttons/Plant Growth" to="." method="_on_plant_growth_mouse_exited"]
+[connection signal="pressed" from="Traits Buttons/Plant Growth" to="." method="_on_plant_growth_pressed"]
+[connection signal="mouse_entered" from="Traits Buttons/Metal Traits" to="." method="_on_metal_traits_mouse_entered"]
+[connection signal="mouse_exited" from="Traits Buttons/Metal Traits" to="." method="_on_metal_traits_mouse_exited"]
+[connection signal="pressed" from="Traits Buttons/Metal Traits" to="." method="_on_metal_traits_pressed"]
