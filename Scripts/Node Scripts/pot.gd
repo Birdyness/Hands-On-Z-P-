@@ -87,6 +87,8 @@ func goBack():
 	texture_button.disabled = false
 	
 func _on_texture_button_pressed() -> void:
+	if sanity.value <= 5:
+		return
 	texture_button.disabled = true
 	pot_flower.hide()
 	sanity.change(-5)

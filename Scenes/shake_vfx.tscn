@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bmcrkwpfpbob5" path="res://Scripts/Node Scripts/shake_vfx.gd" id="1_rgntm"]
 [ext_resource type="Texture2D" uid="uid://bg86ddg437ewm" path="res://Assets/VFX/bloodSplatterVFX.png" id="2_eck4n"]
 [ext_resource type="Texture2D" uid="uid://bq1ieslvqcq1f" path="res://Assets/Screen Transition/Black Screen.png" id="3_hkxuq"]
-[ext_resource type="Texture2D" uid="uid://dgnvragpmmp14" path="res://Assets/Screen Transition/Day 1.jpg" id="4_lvovm"]
+[ext_resource type="AudioStream" uid="uid://btg34uysrhqnw" path="res://Assets/Audido/SFX/Cinematic Boom - sound effect - High quality.mp3" id="4_lvovm"]
 
 [node name="shakeVFX" type="Camera2D" unique_id=1259153282]
 script = ExtResource("1_rgntm")
@@ -28,11 +28,13 @@ mouse_filter = 2
 texture = ExtResource("3_hkxuq")
 expand_mode = 1
 
-[node name="Day1" type="TextureRect" parent="." unique_id=325574500]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -576.0
-offset_top = -325.0
-offset_right = 576.0
-offset_bottom = 323.0
-mouse_filter = 2
-texture = ExtResource("4_lvovm")
+[node name="DayLabel" type="Label" parent="." unique_id=1125027990]
+offset_left = -159.0
+offset_top = -83.0
+offset_right = 207.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 113
+text = "DAY-1"
+
+[node name="BOOM" type="AudioStreamPlayer2D" parent="." unique_id=534834686]
+stream = ExtResource("4_lvovm")

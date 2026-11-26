@@ -3,6 +3,10 @@ var tween: Tween
 @onready var blood_vfx: TextureRect = $bloodVFX
 @onready var black_screen: TextureRect = $BlackScreen
 @onready var day_1: TextureRect = $Day1
+@onready var game_manager = get_parent()
+@onready var days = game_manager.day
+@onready var day_label: Label = $DayLabel
+@onready var boom: AudioStreamPlayer2D = $BOOM
 
 var shake_intensity: float = 0.0
 var active_shake_time: float = 0.0
@@ -15,19 +19,24 @@ var shake_time_speed: float = 20.0
 var noise = FastNoiseLite.new()
 
 func _ready() -> void:
+	day_label.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 	blood_vfx.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 	black_screen.self_modulate = Color(1.0, 1.0, 1.0)
-	day_1.self_modulate = Color(1.0, 1.0, 1.0, 0.0)
 	
-	await waits(2)
-	day_1.self_modulate = Color(1.0, 1.0, 1.0)
-	black_screen.self_modulate = Color(1.0, 1.0, 1.0, 0)
-	
+	await waits(1)
+	boom.play()
+	await waits(0.2)
+	day_label.self_modulate = Color(1.0, 1.0, 1.0, 0.6)
+	await waits(1)
 	if tween:
 			tween.kill()
 	tween = create_tween()
-	tween.tween_property(day_1, "self_modulate", Color(1.0, 1.0, 1.0, 0), 3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
-	
+	tween.set_parallel(true)
+	tween.tween_property(day_label, "self_modulate", Color(1.0, 1.0, 1.0, 0), 3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	tween = create_tween()
+	tween.tween_property(black_screen, "self_modulate", Color(1.0, 1.0, 1.0, 0.0) , 3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+
+	game_manager.dayEnd.connect(dayLabel)
 func _physics_process(delta: float) -> void:
 	if active_shake_time > 0:
 		shake_time += delta*shake_time_speed
@@ -74,4 +83,7 @@ func screen_shake_blood(intensity: int, time: float):
 	tween.tween_property(blood_vfx, "self_modulate", Color(1.0, 1.0, 1.0), 0.05).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(blood_vfx, "self_modulate", Color(1.0, 1.0, 1.0, 0.0), 1.2).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	
+	
+func dayLabel(dayEnd: int):
+	$DayLabel.text = "DAY-" + str(days)
 	

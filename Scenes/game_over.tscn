@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cumg5rm17p766"]
+
+[ext_resource type="Texture2D" uid="uid://cu8bg5ag4opyl" path="res://Assets/GUI/GameOver/Game Over Background.png" id="1_j3ryr"]
+[ext_resource type="Script" uid="uid://dnntk3nok166h" path="res://Scripts/Node Scripts/game_over.gd" id="1_rjluv"]
+[ext_resource type="Texture2D" uid="uid://btyso8ok582s5" path="res://Assets/GUI/GameOver/Point_ Rectangle.png" id="2_rjluv"]
+[ext_resource type="Texture2D" uid="uid://b83hut56nrxkh" path="res://Assets/GUI/GameOver/Text 1_ Game Over.png" id="3_gjtdd"]
+[ext_resource type="Texture2D" uid="uid://qs40ua81bfhw" path="res://Assets/GUI/GameOver/Text 2_ Retry.png" id="4_uylih"]
+[ext_resource type="Texture2D" uid="uid://d27rn20pe8p3a" path="res://Assets/GUI/GameOver/Text 3_ Back to Menu.png" id="5_3817r"]
+[ext_resource type="Texture2D" uid="uid://bq1ieslvqcq1f" path="res://Assets/Screen Transition/Black Screen.png" id="6_mitgx"]
+
+[node name="gameOverScreen" type="Node2D" unique_id=708776091]
+script = ExtResource("1_rjluv")
+
+[node name="GameOverBackground" type="Sprite2D" parent="." unique_id=2126322195]
+position = Vector2(575.6667, 324.25003)
+scale = Vector2(0.3002315, 0.30023146)
+texture = ExtResource("1_j3ryr")
+metadata/_edit_lock_ = true
+
+[node name="PointRectangle" type="Sprite2D" parent="." unique_id=320879799]
+position = Vector2(-25, 456.00003)
+scale = Vector2(0.29464287, 0.29464284)
+texture = ExtResource("2_rjluv")
+
+[node name="Text1GameOver" type="Sprite2D" parent="." unique_id=172515196]
+position = Vector2(230.67232, 212.875)
+scale = Vector2(0.30023372, 0.30023366)
+texture = ExtResource("3_gjtdd")
+
+[node name="Text2Retry" type="Sprite2D" parent="." unique_id=1943116135]
+position = Vector2(229.56586, 414.875)
+scale = Vector2(0.30067554, 0.3006755)
+texture = ExtResource("4_uylih")
+
+[node name="Text3BackToMenu" type="Sprite2D" parent="." unique_id=1700841107]
+position = Vector2(230.63676, 451)
+scale = Vector2(0.30210343, 0.3040537)
+texture = ExtResource("5_3817r")
+
+[node name="BlackScreen" type="Sprite2D" parent="." unique_id=2046634895]
+position = Vector2(580.889, 328.75003)
+scale = Vector2(0.60231483, 0.6023148)
+texture = ExtResource("6_mitgx")
+
+[node name="Back" type="Button" parent="." unique_id=742234835]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 129.0
+offset_top = 437.0
+offset_right = 333.0
+offset_bottom = 464.0
+
+[node name="Retry" type="Button" parent="." unique_id=1790874332]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 187.0
+offset_top = 400.0
+offset_right = 270.0
+offset_bottom = 427.0
+
+[node name="ClickStopper" type="Button" parent="." unique_id=1710266336]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1150.0
+offset_bottom = 648.0
+
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="Back" to="." method="_on_back_mouse_exited"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="Retry" to="." method="_on_retry_mouse_entered"]
+[connection signal="mouse_exited" from="Retry" to="." method="_on_retry_mouse_exited"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
