@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://b2xsengv55yc4" path="res://Assets/Workdesk/EntityShutterCover.png" id="21_fuy7q"]
 [ext_resource type="Texture2D" uid="uid://j0bwnqdrw4uv" path="res://Assets/Flowers/FlowerpotCover.png" id="22_mivtr"]
 [ext_resource type="PackedScene" uid="uid://ms7xdyeryiac" path="res://Scenes/book_inside.tscn" id="41_g1y4a"]
+[ext_resource type="PackedScene" uid="uid://bfc73rdacw2ql" path="res://Scenes/dialogue_box.tscn" id="42_i5mnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(13, 127.5)
@@ -303,11 +304,12 @@ script = ExtResource("9_i4mau")
 [node name="Timer" type="Timer" parent="SanityBar" unique_id=231423864]
 
 [node name="book_inside" parent="." unique_id=153465476 instance=ExtResource("41_g1y4a")]
-visible = false
 position = Vector2(663, 277)
 
+[node name="dialogueBox" parent="." unique_id=81260716 instance=ExtResource("42_i5mnv")]
+position = Vector2(525, 369)
+
 [node name="shakeVFX" parent="." unique_id=1259153282 instance=ExtResource("16_y8n5u")]
-visible = false
 position = Vector2(578, 322)
 metadata/_edit_lock_ = true
 
