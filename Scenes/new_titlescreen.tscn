@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ktempwcv7dmj"]
+
+[ext_resource type="Texture2D" uid="uid://be5huhogwgids" path="res://Assets/GUI/Title Screen/Main Menu.png" id="1_2pwu1"]
+[ext_resource type="Script" uid="uid://c7jklg4i2lf4q" path="res://Scripts/Base Scripts or smth/new_titlescreen.gd" id="1_3akch"]
+[ext_resource type="PackedScene" uid="uid://cas6fady8ud2g" path="res://Scenes/titlescreen_ui.tscn" id="2_ognap"]
+[ext_resource type="Script" uid="uid://c1lykpypylljv" path="res://Scripts/Base Scripts or smth/background.gd" id="3_ognap"]
+
+[node name="Node2D" type="Node2D" unique_id=45579176 node_paths=PackedStringArray("background")]
+script = ExtResource("1_3akch")
+background = NodePath("Background")
+magnitudeX = 10.0
+magnitudeY = 10.0
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1747152233]
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_2pwu1")
+script = ExtResource("3_ognap")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=245495031]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1258222575]
+
+[node name="Control" parent="Camera2D/CanvasLayer" unique_id=743250380 instance=ExtResource("2_ognap")]
