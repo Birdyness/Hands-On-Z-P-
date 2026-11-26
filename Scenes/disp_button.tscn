@@ -2,11 +2,19 @@
 
 [ext_resource type="Script" uid="uid://db2l5kd2loeu2" path="res://Scripts/Node Scripts/disposal.gd" id="1_uor34"]
 [ext_resource type="Texture2D" uid="uid://c6xyoh3po8fcy" path="res://Assets/Execution Panel/Unpressed Button.png" id="2_8wgyd"]
+[ext_resource type="AudioStream" uid="uid://bguphnhjb5hvv" path="res://Assets/Audido/SFX/metal slide smth2.mp3" id="2_kh8sm"]
 [ext_resource type="Texture2D" uid="uid://cf71eaudwlfv4" path="res://Assets/Execution Panel/- Execution Panel -.png" id="2_nsk4k"]
+[ext_resource type="AudioStream" uid="uid://c7ky2uj5f6n8o" path="res://Assets/Audido/SFX/scream again.mp3" id="3_4237n"]
 [ext_resource type="Texture2D" uid="uid://df5f8rux404u7" path="res://Assets/Execution Panel/Pressed Button.png" id="3_nsk4k"]
 
 [node name="dispButton" type="Node2D" unique_id=1839645826]
 script = ExtResource("1_uor34")
+
+[node name="ShutterSFX" type="AudioStreamPlayer" parent="." unique_id=688904944]
+stream = ExtResource("2_kh8sm")
+
+[node name="ScreamSFX" type="AudioStreamPlayer" parent="." unique_id=606242863]
+stream = ExtResource("3_4237n")
 
 [node name="ExecutionPanel" type="Sprite2D" parent="." unique_id=26975512]
 position = Vector2(0, -9.536743e-07)
